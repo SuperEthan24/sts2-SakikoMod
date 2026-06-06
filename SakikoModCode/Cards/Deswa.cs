@@ -1,0 +1,38 @@
+using BaseLib.Utils;
+using MegaCrit.Sts2.Core.Commands;
+using MegaCrit.Sts2.Core.Entities.Cards;
+using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+using MegaCrit.Sts2.Core.Localization.DynamicVars;
+using MegaCrit.Sts2.Core.Models;
+using SakikoMod.SakikoModCode.Character;
+
+namespace SakikoMod.SakikoModCode.Cards;
+
+[Pool(typeof(SakikoModCardPool))]
+public class Deswa : SakikoModBaseCard
+{
+    public override int MaxUpgradeLevel => 0;
+
+    private readonly List<DynamicVar> _vars = new()
+    {
+        new EnergyVar(2),
+        new CardsVar(3)
+    };
+    protected override IEnumerable<DynamicVar> CanonicalVars => _vars;
+    
+    private readonly HashSet<CardKeyword> _keywords = new() { CardKeyword.Unplayable };
+    public override IEnumerable<CardKeyword> CanonicalKeywords => _keywords;
+
+    public override async Task AfterCardDrawn(PlayerChoiceContext ctx, CardModel card, bool fromHandDraw)
+    {
+        if (card == this)
+        {
+            await Cmd.Wait(0.25f);
+            await PlayerCmd.GainEnergy(base.DynamicVars.Energy.IntValue, base.Owner);
+            await CardPileCmd.Draw(ctx, DynamicVars.Cards.BaseValue, base.Owner);
+            await Cmd.Wait(0.25f);
+        }
+    }
+    
+    public Deswa() : base(-1, CardType.Curse, CardRarity.Curse, TargetType.None) {}
+}

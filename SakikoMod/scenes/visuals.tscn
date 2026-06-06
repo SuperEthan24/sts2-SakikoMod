@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://tb0en0jg4y3u"]
+
+[ext_resource type="SpriteFrames" uid="uid://bblktu2yns33q" path="res://SakikoMod/images/characters/idle.png" id="1_11boj"]
+
+[node name="MzmCharVisuals" type="Node2D" unique_id=1775501699]
+
+[node name="Visuals" type="Sprite2D" parent="." unique_id=1143599260]
+unique_name_in_owner = true
+position = Vector2(33, -141)
+scale = Vector2(0.34666667, 0.34666667)
+texture = ExtResource("1_11boj")
+
+[node name="Bounds" type="Control" parent="." unique_id=1167258580]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 0
+offset_left = -113.0
+offset_top = -308.0
+offset_right = 115.0
+mouse_filter = 2
+
+[node name="IntentPosition" type="Marker2D" parent="." unique_id=1823502565]
+position = Vector2(0, -361)
+
+[node name="CenterPos" type="Marker2D" parent="." unique_id=1300745885]
+unique_name_in_owner = true
+position = Vector2(0, -200)

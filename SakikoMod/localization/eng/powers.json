@@ -1,0 +1,20 @@
+{
+	"SAKIKOMOD-LUNCH_POWER.description": "Heal yourselves.",
+	"SAKIKOMOD-LUNCH_POWER.smartDescription": "Heal {Amount}.",
+	"SAKIKOMOD-LUNCH_POWER.title": "Lunch",
+	"SAKIKOMOD-MEMORY_COUNTER.description": "",
+	"SAKIKOMOD-MEMORY_COUNTER.smartDescription": "",
+	"SAKIKOMOD-MEMORY_COUNTER.title": "MemoryCounter",
+	"SAKIKOMOD-CARD_DELETE_POWER.description": "",
+	"SAKIKOMOD-CARD_DELETE_POWER.smartDescription": "",
+	"SAKIKOMOD-CARD_DELETE_POWER.title": "CardDeletePower",
+	"SAKIKOMOD-CARD_ADD_POWER.description": "",
+	"SAKIKOMOD-CARD_ADD_POWER.smartDescription": "",
+	"SAKIKOMOD-CARD_ADD_POWER.title": "CardAddPower",
+	"SAKIKOMOD-OBLIVION_POWER.description": "Delete cards on battle wins.",
+	"SAKIKOMOD-OBLIVION_POWER.smartDescription": "Delete {Amount} cards on battle wins.",
+	"SAKIKOMOD-OBLIVION_POWER.title": "OblivionPower",
+	"SAKIKOMOD-GOLD_NEXT_TURN_POWER.description": "Gain gold next turn.",
+	"SAKIKOMOD-GOLD_NEXT_TURN_POWER.smartDescription": "Gain {Amount} gold next turn.",
+	"SAKIKOMOD-GOLD_NEXT_TURN_POWER.title": "GoldNextTurnPower"
+}
