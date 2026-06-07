@@ -9,7 +9,7 @@ using SakikoMod.SakikoModCode.Character;
 namespace SakikoMod.SakikoModCode.Cards;
 
 [Pool(typeof(SakikoModCardPool))]
-public class Deswa : SakikoModBaseCard
+public class Desuwa : SakikoModBaseCard
 {
     public override int MaxUpgradeLevel => 0;
 
@@ -34,5 +34,5 @@ public class Deswa : SakikoModBaseCard
         }
     }
     
-    public Deswa() : base(-1, CardType.Curse, CardRarity.Curse, TargetType.None) {}
+    public Desuwa() : base(-1, CardType.Curse, CardRarity.Curse, TargetType.None) {}
 }

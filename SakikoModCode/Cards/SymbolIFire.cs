@@ -30,6 +30,7 @@ public class SymbolIFire : SakikoModBaseCard
         get
         {
             yield return HoverTipFactory.FromPower<RitualPower>();
+            yield return HoverTipFactory.FromKeyword(SakikoModKeywords.Deletion);
         }
     }
 

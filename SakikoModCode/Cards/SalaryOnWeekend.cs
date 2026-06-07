@@ -2,6 +2,7 @@ using BaseLib.Utils;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using SakikoMod.SakikoModCode.Character;
 using SakikoMod.SakikoModCode.DynamicVars;
@@ -18,6 +19,14 @@ public class SalaryOnWeekend : SakikoModBaseCard
         new PowerVar<GoldNextTurnPower>(15)
     };
     protected override IEnumerable<DynamicVar> CanonicalVars => _vars;
+
+    protected override IEnumerable<IHoverTip> ExtraHoverTips
+    {
+        get
+        {
+            yield return HoverTipFactory.FromPower<GoldNextTurnPower>();
+        }
+    }
 
     protected override void OnUpgrade()
     {

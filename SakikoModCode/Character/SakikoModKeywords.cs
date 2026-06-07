@@ -4,7 +4,7 @@ using MegaCrit.Sts2.Core.Entities.Cards;
 
 namespace SakikoMod.SakikoModCode.Character;
 
-public class SakikoModKeywords
+public static class SakikoModKeywords
 {
     [CustomEnum]
     [KeywordProperties(AutoKeywordPosition.None, true)]
@@ -17,6 +17,13 @@ public class SakikoModKeywords
     [CustomEnum]
     [KeywordProperties(AutoKeywordPosition.None, true)]
     public static CardKeyword ToBeAdded = CardKeyword.None;
+    
+    [CustomEnum]
+    [KeywordProperties(AutoKeywordPosition.None, true)]
+    public static CardKeyword Addition = CardKeyword.None;
+    [CustomEnum]
+    [KeywordProperties(AutoKeywordPosition.None, true)]
+    public static CardKeyword Deletion = CardKeyword.None;
     
     [CustomEnum]
     [KeywordProperties(AutoKeywordPosition.None, true)]

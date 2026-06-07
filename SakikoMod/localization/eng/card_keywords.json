@@ -3,10 +3,14 @@
 	"SAKIKOMOD-GENERATED.title": "Generated",
 	"SAKIKOMOD-TOBEDELETED.description": "This card is deleted.\nNot intended to be drawn back from Exhaust pile.",
 	"SAKIKOMOD-TOBEDELETED.title": "To be Deleted",
-	"SAKIKOMOD-TOBEADDED.description": "This card is to be added to your pile.",
+	"SAKIKOMOD-TOBEADDED.description": "This card is to be added to your deck.",
 	"SAKIKOMOD-TOBEADDED.title": "To be added",
 	"SAKIKOMOD-ASSTRIKE.description": "This card is regarded as Strike card.",
 	"SAKIKOMOD-ASSTRIKE.title": "Strike",
 	"SAKIKOMOD-ASDEFEND.description": "This card is regarded as Defend card.",
-	"SAKIKOMOD-ASDEFEND.title": "Defend"
+	"SAKIKOMOD-ASDEFEND.title": "Defend",
+	"SAKIKOMOD-ADDITION.description": "Add into your deck.",
+	"SAKIKOMOD-ADDITION.title": "Addition",
+	"SAKIKOMOD-DELETION.description": "Delete for the entire game.",
+	"SAKIKOMOD-DELETION.title": "Deletion"
 }

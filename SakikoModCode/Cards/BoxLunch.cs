@@ -27,7 +27,15 @@ public class BoxLunch : SakikoModBaseCard
     
     private readonly HashSet<CardKeyword> _keywords = new() { CardKeyword.Ethereal };
     public override IEnumerable<CardKeyword> CanonicalKeywords => _keywords;
-    
+
+    protected override IEnumerable<IHoverTip> ExtraHoverTips
+    {
+        get
+        {
+            yield return HoverTipFactory.FromPower<LunchPower>();
+        }
+    }
+
     protected override void OnUpgrade()
     {
         DynamicVars["Heal"].UpgradeValueBy(3);     // 7 → 10

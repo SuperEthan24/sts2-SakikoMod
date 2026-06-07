@@ -4,5 +4,5 @@ namespace SakikoMod.SakikoModCode.DynamicVars;
 
 public class GoldEarnVar : DynamicVar
 {
-    public GoldEarnVar(decimal baseValue) : base("GoldEarn", baseValue) { }
+    public GoldEarnVar(int baseValue) : base("GoldEarn", baseValue) { }
 }

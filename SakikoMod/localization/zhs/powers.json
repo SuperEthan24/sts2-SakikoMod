@@ -1,0 +1,20 @@
+{
+	"SAKIKOMOD-LUNCH_POWER.description": "回合结束时恢复生命。",
+	"SAKIKOMOD-LUNCH_POWER.smartDescription": "回合结束时，恢复{Amount}点生命。",
+	"SAKIKOMOD-LUNCH_POWER.title": "午餐",
+	"SAKIKOMOD-MEMORY_COUNTER.description": "",
+	"SAKIKOMOD-MEMORY_COUNTER.smartDescription": "",
+	"SAKIKOMOD-MEMORY_COUNTER.title": "MemoryCounter",
+	"SAKIKOMOD-CARD_DELETE_POWER.description": "",
+	"SAKIKOMOD-CARD_DELETE_POWER.smartDescription": "",
+	"SAKIKOMOD-CARD_DELETE_POWER.title": "CardDeletePower",
+	"SAKIKOMOD-CARD_ADD_POWER.description": "",
+	"SAKIKOMOD-CARD_ADD_POWER.smartDescription": "",
+	"SAKIKOMOD-CARD_ADD_POWER.title": "CardAddPower",
+	"SAKIKOMOD-OBLIVION_POWER.description": "战斗胜利时获得“删除卡牌”奖励",
+	"SAKIKOMOD-OBLIVION_POWER.smartDescription": "战斗胜利时，删除{Amount}张卡牌。",
+	"SAKIKOMOD-OBLIVION_POWER.title": "遗忘",
+	"SAKIKOMOD-GOLD_NEXT_TURN_POWER.description": "下回合获得金币。",
+	"SAKIKOMOD-GOLD_NEXT_TURN_POWER.smartDescription": "下回合获得{Amount}金币。",
+	"SAKIKOMOD-GOLD_NEXT_TURN_POWER.title": "下回合金币"
+}

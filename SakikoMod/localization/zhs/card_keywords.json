@@ -1,0 +1,16 @@
+{
+	"SAKIKOMOD-GENERATED.description": "这张卡是被生成的。",
+	"SAKIKOMOD-GENERATED.title": "生成",
+	"SAKIKOMOD-TOBEDELETED.description": "这张卡被删除了。\n设计上不允许被从消耗牌堆里打出。",
+	"SAKIKOMOD-TOBEDELETED.title": "被删除",
+	"SAKIKOMOD-TOBEADDED.description": "这张卡被加入了你的牌组。",
+	"SAKIKOMOD-TOBEADDED.title": "被加入",
+	"SAKIKOMOD-ASSTRIKE.description": "这张牌被视作[gold]打击[/gold]。",
+	"SAKIKOMOD-ASSTRIKE.title": "打击",
+	"SAKIKOMOD-ASDEFEND.description": "这张牌被视作[gold]防御[/gold]。",
+	"SAKIKOMOD-ASDEFEND.title": "防御",
+	"SAKIKOMOD-ADDITION.description": "加入你的牌组。",
+	"SAKIKOMOD-ADDITION.title": "添加",
+	"SAKIKOMOD-DELETION.description": "[gold]消耗[/gold]；\n如果它在你的牌组中，就从你的牌组中移除。",
+	"SAKIKOMOD-DELETION.title": "移除"
+}

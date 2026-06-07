@@ -3,9 +3,11 @@ using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Powers;
 using MegaCrit.Sts2.Core.Factories;
+using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Rooms;
 using MegaCrit.Sts2.Core.Saves.Runs;
+using SakikoMod.SakikoModCode.Character;
 
 namespace SakikoMod.SakikoModCode.Powers;
 
@@ -28,7 +30,15 @@ public class CardAddPower : CustomPowerModel
     {
         _cards.Add(card);
     }
-    
+
+    public override async Task AfterCardPlayed(PlayerChoiceContext ctx, CardPlay play)
+    {
+        if (play.Card.Keywords.Contains(SakikoModKeywords.Addition))
+        {
+            await SakikoModCmd.InGameAdd(base.Owner, ctx, play.Card);
+        }
+    }
+
     public override async Task AfterCombatEnd(CombatRoom room)
     {
         foreach (CardModel c in _cards)

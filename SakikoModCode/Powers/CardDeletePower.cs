@@ -1,11 +1,14 @@
 using System.Diagnostics.Tracing;
 using BaseLib.Abstracts;
 using MegaCrit.Sts2.Core.Commands;
+using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Powers;
+using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Logging;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Rooms;
 using MegaCrit.Sts2.Core.Saves.Runs;
+using SakikoMod.SakikoModCode.Character;
 
 namespace SakikoMod.SakikoModCode.Powers;
 
@@ -21,6 +24,14 @@ public class CardDeletePower : CustomPowerModel
     public void DeleteCard(CardModel card)
     {
         _cards.Add(card);
+    }
+    
+    public override async Task AfterCardPlayedLate(PlayerChoiceContext ctx, CardPlay play)
+    {
+        if (play.Card.Keywords.Contains(SakikoModKeywords.Deletion))
+        {
+            await SakikoModCmd.InGameDelete(base.Owner, ctx, play.Card);
+        }
     }
     
     public override async Task AfterCombatEnd(CombatRoom room)
