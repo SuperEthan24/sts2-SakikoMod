@@ -6,7 +6,11 @@
   "version": "v0.0.0",
   "has_pck": true,
   "has_dll": true,
-  "dependencies": ["BaseLib"],
+  "dependencies": [
+    {
+      "id": "BaseLib",
+      "min_version": "3.2.0"
+    }],
   "affects_gameplay": true,
   "min_game_version": "0.106.0"
 }

@@ -66,16 +66,7 @@ public class WornRibbon : CustomRelicModel
         if (Owner != null)
         {
             await CombatCounters.ResetThisCombat(null, Owner);
-            IEnumerable<CardModel> cards = [ModelDb.Card<Nihil>(), ModelDb.Card<Desire>()];
-            CardCreationOptions options = new CardCreationOptions(
-                cards, CardCreationSource.None,
-                CardRarityOddsType.Uniform);
-            List<CardModel> c = new List<CardModel>();
-            var reward = CardFactory.CreateForReward(base.Owner, 2, options);
-            c.Add(reward.First().Card);
-            c.Add(reward.Last().Card);
-            room.AddExtraReward(base.Owner, new CardReward(c, CardCreationSource.Other, base.Owner, 
-                CardCreationOptions.ForNonCombatWithDefaultOdds(Array.Empty<CardModel>())));
+            room.AddExtraReward(base.Owner, new RibbonReward(base.Owner));
             Flash();
         }
     }

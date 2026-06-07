@@ -92,8 +92,8 @@ public class SakikoMod : CustomCharacterModel
         "vfx/vfx_rock_shatter",
     };
     public override IEnumerable<CardModel> StartingDeck =>
-        Enumerable.Repeat<CardModel>(ModelDb.Card<SkkStrike>(), 4)
-            .Concat(Enumerable.Repeat<CardModel>(ModelDb.Card<SkkDefend>(), 4))
+        Enumerable.Repeat<CardModel>(ModelDb.Card<SkkStrike>(), 5)
+            .Concat(Enumerable.Repeat<CardModel>(ModelDb.Card<SkkDefend>(), 5))
             .Append<CardModel>(ModelDb.Card<Oblivion>())
             .Append<CardModel>(ModelDb.Card<GoldAttack>())
             .Append<CardModel>(ModelDb.Card<DeliverNewspaper>());
