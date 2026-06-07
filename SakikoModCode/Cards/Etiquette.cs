@@ -12,6 +12,9 @@ namespace SakikoMod.SakikoModCode.Cards;
 [Pool(typeof(SakikoModCardPool))]
 public class Etiquette : SakikoModBaseCard
 {
+    private readonly HashSet<CardKeyword> _keywords = new() { CardKeyword.Ethereal };
+    public override IEnumerable<CardKeyword> CanonicalKeywords => _keywords;
+    
     protected override async Task OnPlay(PlayerChoiceContext ctx, CardPlay play)
     {
         CardModel c = base.CombatState.CreateCard<Desuwa>(base.Owner);
@@ -27,6 +30,11 @@ public class Etiquette : SakikoModBaseCard
             yield return HoverTipFactory.FromCard<Desuwa>();
             yield return HoverTipFactory.FromKeyword(SakikoModKeywords.Addition);
         }
+    }
+
+    protected override void OnUpgrade()
+    {
+        RemoveKeyword(CardKeyword.Ethereal);
     }
 
     public Etiquette() : base(2, CardType.Power, CardRarity.Rare, TargetType.None) { }
