@@ -60,6 +60,7 @@
     </ItemGroup>
 
     <ItemGroup>
+        <Folder Include="SakikoModCode\DynamicVars\" />
         <Folder Include="SakikoModCode\Potions\" />
         <Folder Include="SakikoMod\images\card_portraits\big\"/>
         <Folder Include="SakikoMod\images\characters\" />

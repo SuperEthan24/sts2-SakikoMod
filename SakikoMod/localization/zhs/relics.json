@@ -1,5 +1,11 @@
 {
-	"SAKIKOMOD-WORN_RIBBON.description": "战斗胜利时，获得仅包含[gold]非望[/gold]和[gold]渴望[/gold]的额外特殊奖励。\n这个额外奖励不会被其他遗物影响。",
-	"SAKIKOMOD-WORN_RIBBON.flavor": "祥子很珍惜它。",
-	"SAKIKOMOD-WORN_RIBBON.title": "褪色的发带"
+	"SAKIKOMOD-WORN_RIBBON_RELIC.description": "战斗胜利时，获得仅包含[gold]非望[/gold]和[gold]渴望[/gold]的额外特殊奖励。\n这个额外奖励不会被其他遗物影响。",
+	"SAKIKOMOD-WORN_RIBBON_RELIC.flavor": "祥子很珍惜它。",
+	"SAKIKOMOD-WORN_RIBBON_RELIC.title": "褪色的发带",
+	"SAKIKOMOD-SHINY_RIBBON_RELIC.description": "战斗胜利时，获得仅包含[green]升级过的[/green][gold]非望[/gold]和[gold]渴望[/gold]的额外特殊奖励。\n这个额外奖励不会被其他遗物影响。",
+	"SAKIKOMOD-SHINY_RIBBON_RELIC.flavor": "重新散发着光辉，就像过去一样。祥子看到它时，总会想起那时。",
+	"SAKIKOMOD-SHINY_RIBBON_RELIC.title": "闪耀的发带",
+	"SAKIKOMOD-DELETION_COUNTER_RELIC.description": "",
+	"SAKIKOMOD-DELETION_COUNTER_RELIC.flavor": "",
+	"SAKIKOMOD-DELETION_COUNTER_RELIC.title": "DeletionCounterRelic"
 }

@@ -34,5 +34,9 @@
 	"SAKIKOMOD-ETIQUETTE.description": "Put a [gold]Desuwa[/gold] card in Draw pile and deck.",
 	"SAKIKOMOD-ETIQUETTE.title": "Etiquette",
 	"SAKIKOMOD-DESUWA.description": "Draw {Cards:diff()} extra card and gain {Energy:energyIcons()} on draw.",
-	"SAKIKOMOD-DESUWA.title": "Desuwa"
+	"SAKIKOMOD-DESUWA.title": "Desuwa",
+	"SAKIKOMOD-SYMBOL_V_ETHER.description": "",
+	"SAKIKOMOD-SYMBOL_V_ETHER.title": "Symbol V: Ether",
+	"SAKIKOMOD-HARUHIKAGE.description": "Working in progress(WIP)",
+	"SAKIKOMOD-HARUHIKAGE.title": "Haruhikage"
 }

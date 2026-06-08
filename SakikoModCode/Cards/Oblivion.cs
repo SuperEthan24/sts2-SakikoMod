@@ -12,7 +12,7 @@ using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.ValueProps;
 using SakikoMod.SakikoModCode.Character;
-using OblivionPower = SakikoMod.SakikoModCode.Powers.OblivionPower;
+using SakikoMod.SakikoModCode.Powers;
 
 namespace SakikoMod.SakikoModCode.Cards;
 
@@ -38,7 +38,7 @@ public class Oblivion : SakikoModBaseCard
     
     protected override async Task OnPlay(PlayerChoiceContext ctx, CardPlay play)
     {
-        await PowerCmd.Apply<OblivionPower>(ctx, base.Owner.Creature, 1m, base.Owner.Creature, this);
+        await PowerCmd.Apply<SakikoOblivionPower>(ctx, base.Owner.Creature, 1m, base.Owner.Creature, this);
         if (play.Target != null)
         {
             await DamageCmd.Attack(DynamicVars.Damage.BaseValue)

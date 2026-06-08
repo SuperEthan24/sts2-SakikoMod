@@ -1,27 +1,24 @@
-using System.Collections.Generic;
-using System.Threading.Tasks;
 using BaseLib.Abstracts;
 using BaseLib.Utils;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
-using MegaCrit.Sts2.Core.Localization;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
-using MegaCrit.Sts2.Core.Models;
-using MegaCrit.Sts2.Core.Models.Powers;
-using MegaCrit.Sts2.Core.ValueProps;
 using SakikoMod.SakikoModCode.Character;
 using SakikoMod.SakikoModCode.Powers;
 
 namespace SakikoMod.SakikoModCode.Cards;
 
 [Pool(typeof(SakikoModCardPool))]
-public class BoxLunch : SakikoModBaseCard
+public class Haruhikage : SakikoModBaseCard, ITomeCard
 {
+    public override bool CanBeGeneratedInCombat => false;
+    public override bool CanBeGeneratedByModifiers => false;
+    
     private readonly List<DynamicVar> _vars = new()
     {
-        new DynamicVar("Heal", 7m),
+        new DynamicVar("Haruhikage", 2m),
     };
     protected override IEnumerable<DynamicVar> CanonicalVars => _vars;
     
@@ -32,20 +29,22 @@ public class BoxLunch : SakikoModBaseCard
     {
         get
         {
-            yield return HoverTipFactory.FromPower<LunchPower>();
+            yield return HoverTipFactory.FromPower<HaruhikagePower>();
+            yield return HoverTipFactory.FromPower<SakikoLightPower>();
+            yield return HoverTipFactory.FromPower<SakikoDarkPower>();
         }
     }
 
     protected override void OnUpgrade()
     {
-        DynamicVars["Heal"].UpgradeValueBy(3);     // 7 → 10
-    }
-    
-    protected override async Task OnPlay(PlayerChoiceContext ctx, CardPlay play)
-    {
-        await PowerCmd.Apply<LunchPower>(ctx, base.Owner.Creature, amount: base.DynamicVars["Heal"].BaseValue,
-            base.Owner.Creature, this);
+        RemoveKeyword(CardKeyword.Ethereal);
     }
 
-    public BoxLunch() : base(1, CardType.Power, CardRarity.Uncommon, TargetType.None) { }
+    protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+    {
+        await PowerCmd.Apply<HaruhikagePower>(choiceContext, base.Owner.Creature,
+            amount: base.DynamicVars["Haruhikage"].BaseValue, base.Owner.Creature, this);
+    }
+
+    public Haruhikage() : base(3, CardType.Power, CardRarity.Ancient, TargetType.Self) { }
 }

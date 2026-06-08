@@ -34,5 +34,9 @@
 	"SAKIKOMOD-ETIQUETTE.description": "将一张[gold]Desuwa[/gold]放入抽牌堆和牌组。",
 	"SAKIKOMOD-ETIQUETTE.title": "礼仪",
 	"SAKIKOMOD-DESUWA.description": "抽到时，额外抽{Cards:diff()}张卡并获得{Energy:energyIcons()}。",
-	"SAKIKOMOD-DESUWA.title": "Desuwa"
+	"SAKIKOMOD-DESUWA.title": "Desuwa",
+	"SAKIKOMOD-SYMBOL_V_ETHER.description": "对所有敌人造成{Damage:diff()}伤害。\n本场战斗每成功删除一张牌就额外造成一次伤害。\n(造成{XAttack}次伤害)",
+	"SAKIKOMOD-SYMBOL_V_ETHER.title": "第五元素：以太",
+	"SAKIKOMOD-HARUHIKAGE.description": "将[gold]光芒[/gold]与[gold]黑暗[/gold]的最大层数提高到60。\n每回合结束时获得{Haruhikage:diff()}层[gold]光芒[/gold]与[gold]黑暗[/gold]。",
+	"SAKIKOMOD-HARUHIKAGE.title": "春日影"
 }

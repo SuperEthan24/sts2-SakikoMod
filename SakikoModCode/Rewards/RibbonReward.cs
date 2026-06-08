@@ -1,7 +1,6 @@
 using BaseLib.Abstracts;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Context;
-using MegaCrit.Sts2.Core.DevConsole;
 using MegaCrit.Sts2.Core.Entities.CardRewardAlternatives;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Players;
@@ -27,7 +26,7 @@ using MegaCrit.Sts2.Core.Saves.Runs;
 using MegaCrit.Sts2.Core.TestSupport;
 using SakikoMod.SakikoModCode.Cards;
 
-namespace SakikoMod.SakikoModCode;
+namespace SakikoMod.SakikoModCode.Rewards;
 
 public class RibbonReward : CustomReward
 {
@@ -182,8 +181,15 @@ public class RibbonReward : CustomReward
     }
     public override CreateRewardFromSave<CustomReward> DeserializeMethod => CreateFromSerializable;
 
-    public RibbonReward(Player player) : base(player)
+    public RibbonReward(Player player, bool isAncient = false) : base(player)
     {
+        Nihil n = player.RunState.CreateCard<Nihil>(player);
+        Desire d = player.RunState.CreateCard<Desire>(player);
+        if (isAncient)
+        {
+            CardCmd.Upgrade(n);
+            CardCmd.Upgrade(d);
+        }
         _ribbonCards.Add(player.RunState.CreateCard<Nihil>(player));
         _ribbonCards.Add(player.RunState.CreateCard<Desire>(player));
         _cards = _ribbonCards.Select((CardModel c) => new CardCreationResult(c)).ToList();

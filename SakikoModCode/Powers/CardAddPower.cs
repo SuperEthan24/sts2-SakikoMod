@@ -35,7 +35,7 @@ public class CardAddPower : CustomPowerModel
     {
         if (play.Card.Keywords.Contains(SakikoModKeywords.Addition))
         {
-            await SakikoModCmd.InGameAdd(base.Owner, ctx, play.Card);
+            await SakikoModCmd.InGameAdd(base.Owner, ctx, play.Card, PileType.None);
         }
     }
 

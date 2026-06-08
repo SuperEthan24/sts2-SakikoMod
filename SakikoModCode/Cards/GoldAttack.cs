@@ -13,7 +13,6 @@ using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.ValueProps;
 using SakikoMod.SakikoModCode.Character;
-using SakikoMod.SakikoModCode.DynamicVars;
 
 namespace SakikoMod.SakikoModCode.Cards;
 

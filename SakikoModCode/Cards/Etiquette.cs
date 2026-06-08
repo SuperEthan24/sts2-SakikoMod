@@ -18,9 +18,7 @@ public class Etiquette : SakikoModBaseCard
     protected override async Task OnPlay(PlayerChoiceContext ctx, CardPlay play)
     {
         CardModel c = base.CombatState.CreateCard<Desuwa>(base.Owner);
-        await SakikoModCmd.InGameAdd(base.Owner.Creature, ctx, c);
-        await CardPileCmd.Add(c, PileType.Draw, CardPilePosition.Random);
-        CardCmd.PreviewCardPileAdd(await CardPileCmd.Add(c, PileType.Draw, CardPilePosition.Random), 2f);
+        await SakikoModCmd.InGameAdd(base.Owner.Creature, ctx, c, PileType.Draw);
     }
 
     protected override IEnumerable<IHoverTip> ExtraHoverTips

@@ -100,7 +100,7 @@ public class SakikoMod : CustomCharacterModel
 
     public override IReadOnlyList<RelicModel> StartingRelics =>
     [
-        ModelDb.Relic<WornRibbon>()
+        ModelDb.Relic<WornRibbonRelic>()
     ];
 
     public override CardPoolModel CardPool => ModelDb.CardPool<SakikoModCardPool>();

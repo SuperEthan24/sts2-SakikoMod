@@ -11,10 +11,19 @@
 	"SAKIKOMOD-CARD_ADD_POWER.description": "",
 	"SAKIKOMOD-CARD_ADD_POWER.smartDescription": "",
 	"SAKIKOMOD-CARD_ADD_POWER.title": "CardAddPower",
-	"SAKIKOMOD-OBLIVION_POWER.description": "战斗胜利时获得“删除卡牌”奖励",
-	"SAKIKOMOD-OBLIVION_POWER.smartDescription": "战斗胜利时，删除{Amount}张卡牌。",
-	"SAKIKOMOD-OBLIVION_POWER.title": "遗忘",
+	"SAKIKOMOD-SAKIKO_OBLIVION_POWER.description": "战斗胜利时获得“删除卡牌”奖励",
+	"SAKIKOMOD-SAKIKO_OBLIVION_POWER.smartDescription": "战斗胜利时，删除{Amount}张卡牌。",
+	"SAKIKOMOD-SAKIKO_OBLIVION_POWER.title": "遗忘",
 	"SAKIKOMOD-GOLD_NEXT_TURN_POWER.description": "下回合获得金币。",
 	"SAKIKOMOD-GOLD_NEXT_TURN_POWER.smartDescription": "下回合获得{Amount}金币。",
-	"SAKIKOMOD-GOLD_NEXT_TURN_POWER.title": "下回合金币"
+	"SAKIKOMOD-GOLD_NEXT_TURN_POWER.title": "下回合金币",
+	"SAKIKOMOD-SAKIKO_LIGHT_POWER.description": "每10层在回合开始时额外获得{energyPrefix:energyIcons(1)}。",
+	"SAKIKOMOD-SAKIKO_LIGHT_POWER.smartDescription": "回合开始时额外获得{Energy:energyIcons()}。\n至多{MaximumStack:diff()}层。",
+	"SAKIKOMOD-SAKIKO_LIGHT_POWER.title": "光芒",
+	"SAKIKOMOD-SAKIKO_DARK_POWER.description": "每15层在回合开始时额外抽[blue]1[/blue]张卡。",
+	"SAKIKOMOD-SAKIKO_DARK_POWER.smartDescription": "回合开始时额外抽[blue]{Cards:diff()}[/blue]张卡。\n至多{MaximumStack:diff()}层。",
+	"SAKIKOMOD-SAKIKO_DARK_POWER.title": "黑暗",
+	"SAKIKOMOD-HARUHIKAGE_POWER.description": "提高[gold]光芒[/gold]与[gold]黑暗[/gold]的最大层数。\n每回合结束时获得[gold]光芒[/gold]与[gold]黑暗[/gold]。",
+	"SAKIKOMOD-HARUHIKAGE_POWER.smartDescription": "将[gold]光芒[/gold]与[gold]黑暗[/gold]的最大层数提高到60。\n每回合结束时获得{Amount}层[gold]光芒[/gold]与[gold]黑暗[/gold]。",
+	"SAKIKOMOD-HARUHIKAGE_POWER.title": "春日影"
 }

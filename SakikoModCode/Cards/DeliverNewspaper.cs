@@ -5,7 +5,6 @@ using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.ValueProps;
 using SakikoMod.SakikoModCode.Character;
-using SakikoMod.SakikoModCode.DynamicVars;
 
 namespace SakikoMod.SakikoModCode.Cards;
 
