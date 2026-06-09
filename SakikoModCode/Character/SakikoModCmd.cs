@@ -27,7 +27,8 @@ public static class SakikoModCmd
             }
         }
 
-        await CardPileCmd.RemoveFromCombat(cardModel, skipVisuals);
+        await CardCmd.Exhaust(ctx, cardModel, false, skipVisuals);
+        await CardPileCmd.RemoveFromCombat(cardModel, true);
     }
 
     public static async Task InGameAdd(Creature creature, PlayerChoiceContext ctx, CardModel cardModel,

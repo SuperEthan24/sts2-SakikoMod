@@ -18,7 +18,7 @@ public class Haruhikage : SakikoModBaseCard, ITomeCard
     
     private readonly List<DynamicVar> _vars = new()
     {
-        new DynamicVar("Haruhikage", 2m),
+        new DynamicVar("Haruhikage", 5m),
     };
     protected override IEnumerable<DynamicVar> CanonicalVars => _vars;
     

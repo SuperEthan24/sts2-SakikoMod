@@ -35,8 +35,8 @@
 	"SAKIKOMOD-ETIQUETTE.title": "Etiquette",
 	"SAKIKOMOD-DESUWA.description": "Draw {Cards:diff()} extra card and gain {Energy:energyIcons()} on draw.",
 	"SAKIKOMOD-DESUWA.title": "Desuwa",
-	"SAKIKOMOD-SYMBOL_V_ETHER.description": "",
+	"SAKIKOMOD-SYMBOL_V_ETHER.description": "Deal {Damage:diff()} damage to all enemies {XAttack} times.\nWhen successfully [gold]Deleted[/gold] a card, deal damage for 1 additional times.",
 	"SAKIKOMOD-SYMBOL_V_ETHER.title": "Symbol V: Ether",
-	"SAKIKOMOD-HARUHIKAGE.description": "Working in progress(WIP)",
+	"SAKIKOMOD-HARUHIKAGE.description": "Raise Max stack of [gold]Light[/gold] and [gold]Dark[/gold].\nGain {Haruhikage:diff()} stack of these on turn end.",
 	"SAKIKOMOD-HARUHIKAGE.title": "Haruhikage"
 }
