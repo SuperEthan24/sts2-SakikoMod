@@ -38,5 +38,11 @@
 	"SAKIKOMOD-SYMBOL_V_ETHER.description": "对所有敌人造成{Damage:diff()}伤害{XAttack}次。\n本局游戏每成功[gold]删除[/gold]一张牌就额外造成一次伤害。",
 	"SAKIKOMOD-SYMBOL_V_ETHER.title": "第五元素：以太",
 	"SAKIKOMOD-HARUHIKAGE.description": "将[gold]光芒[/gold]与[gold]黑暗[/gold]的最大层数提高到60。\n每回合结束时获得{Haruhikage:diff()}层[gold]光芒[/gold]与[gold]黑暗[/gold]。",
-	"SAKIKOMOD-HARUHIKAGE.title": "春日影"
+	"SAKIKOMOD-HARUHIKAGE.title": "春日影",
+	"SAKIKOMOD-AWAKENING_OF_CRESCENT.description": "造成{Damage:diff()}伤害{AttackTimes:diff()}次。\n若月相为[gold]新月[/gold]，额外造成{ExtraAttack:diff()}次伤害。",
+	"SAKIKOMOD-AWAKENING_OF_CRESCENT.title": "新月的苏醒",
+	"SAKIKOMOD-WANNA_BE_HUMAN.description": "[gold]逆行[/gold] {Backward:diff()}\n获得{Block:diff()}[gold]格挡[/gold]。\n将一张[gold]非望[/gold]放入抽牌堆和牌组。",
+	"SAKIKOMOD-WANNA_BE_HUMAN.title": "想成为人类",
+	"SAKIKOMOD-FORGET_EVERYTHING.description": "[gold]顺行[/gold] {Forward:diff()}\n造成{Damage:diff()}点伤害。\n将一张[gold]渴望[/gold]放入抽牌堆和牌组。",
+	"SAKIKOMOD-FORGET_EVERYTHING.title": "忘记一切"
 }

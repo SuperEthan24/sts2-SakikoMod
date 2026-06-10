@@ -23,19 +23,21 @@ public class SakikoDarkPower : CustomPowerModel
     };
     protected override IEnumerable<DynamicVar> CanonicalVars => _vars;
 
-    public override async Task AfterPowerAmountChanged(PlayerChoiceContext ctx, PowerModel power, decimal amount,
+    public override Task AfterPowerAmountChanged(PlayerChoiceContext ctx, PowerModel power, decimal amount,
         Creature? applier, CardModel? cardSource)
     {
+        if (power.Owner != base.Owner) return Task.CompletedTask;
         if (base.Owner.HasPower<HaruhikagePower>())
         {
             DynamicVars["MaximumStack"].BaseValue = 60;
         }
-        if (Amount > DynamicVars["MaximumStack"].BaseValue)
+        if (power == this && Amount > DynamicVars["MaximumStack"].BaseValue)
         {
-            await PowerCmd.ModifyAmount(ctx, this, DynamicVars["MaximumStack"].BaseValue, applier, cardSource);
+            SetAmount((int)DynamicVars["MaximumStack"].BaseValue, true);
         }
 
         DynamicVars.Cards.BaseValue = Amount / 15;
+        return Task.CompletedTask;
     }
     
     public override decimal ModifyHandDraw(Player player, decimal count)

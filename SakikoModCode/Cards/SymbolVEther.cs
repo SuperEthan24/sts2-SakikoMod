@@ -38,7 +38,7 @@ public class SymbolVEther : SakikoModBaseCard
     };
     protected override IEnumerable<DynamicVar> CanonicalVars => _vars;
     
-    private readonly HashSet<CardKeyword> _keywords = new() { CardKeyword.Exhaust };
+    private readonly HashSet<CardKeyword> _keywords = new() { CardKeyword.Exhaust, CardKeyword.Eternal };
     public override IEnumerable<CardKeyword> CanonicalKeywords => _keywords;
     
     protected override IEnumerable<IHoverTip> ExtraHoverTips
@@ -92,17 +92,11 @@ public class SymbolVEther : SakikoModBaseCard
     {
         await PowerCmd.Apply<SakikoOblivionPower>(ctx, base.Owner.Creature, 1m, base.Owner.Creature, this);
         var cs = Owner.Creature.CombatState;
-        for (int i = 0; i < CurrentAttackTimes + DynamicVars["Deletion"].BaseValue; i++)
+        int num = (int)(CurrentAttackTimes + DynamicVars["Deletion"].BaseValue);
+        if (cs != null && cs.HittableEnemies.Count > 0)
         {
-            if (cs != null && cs.HittableEnemies.Count > 0)
-            {
-                await DamageCmd.Attack(DynamicVars.Damage.BaseValue)
-                    .FromCard(this).TargetingAllOpponents(cs).Execute(ctx);
-            }
-            else
-            {
-                break;
-            }
+            await DamageCmd.Attack(DynamicVars.Damage.BaseValue).FromCard(this).TargetingAllOpponents(cs)
+                .WithHitCount(num).Execute(ctx);
         }
     }
 

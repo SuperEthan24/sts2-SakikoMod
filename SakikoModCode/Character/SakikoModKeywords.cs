@@ -22,7 +22,7 @@ public static class SakikoModKeywords
     [KeywordProperties(AutoKeywordPosition.None, true)]
     public static CardKeyword Addition = CardKeyword.None;
     [CustomEnum]
-    [KeywordProperties(AutoKeywordPosition.None, true)]
+    [KeywordProperties(AutoKeywordPosition.After, true)]
     public static CardKeyword Deletion = CardKeyword.None;
     
     [CustomEnum]
@@ -31,4 +31,11 @@ public static class SakikoModKeywords
     [CustomEnum]
     [KeywordProperties(AutoKeywordPosition.None, true)]
     public static CardKeyword AsDefend = CardKeyword.None;
+    
+    [CustomEnum]
+    [KeywordProperties(AutoKeywordPosition.None, true)]
+    public static CardKeyword ForwardKeyword = CardKeyword.None;
+    [CustomEnum]
+    [KeywordProperties(AutoKeywordPosition.None, true)]
+    public static CardKeyword BackwardKeyword = CardKeyword.None;
 }
