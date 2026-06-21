@@ -44,7 +44,7 @@ public class WannaBeHuman : SakikoModBaseCard
         }
         await CreatureCmd.GainBlock(Owner.Creature,
             DynamicVars.Block.BaseValue, ValueProp.Move, play, false);
-        await SakikoModCmd.InGameAdd(base.Owner.Creature, ctx, base.Owner.Creature.CombatState.CreateCard<Desire>(base.Owner),
+        await SakikoModCmd.InGameAdd(base.Owner.Creature, ctx, base.Owner.Creature.CombatState.CreateCard<Nihil>(base.Owner),
             PileType.Draw);
     }
 

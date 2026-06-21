@@ -15,7 +15,7 @@ public class CrescentPower : CustomPowerModel
     
     private readonly List<DynamicVar> _vars = new()
     {
-        new DynamicVar("Value", 1)
+        new DynamicVar("Value", 3)
     };
     protected override IEnumerable<DynamicVar> CanonicalVars => _vars;
 

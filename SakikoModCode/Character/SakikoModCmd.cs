@@ -14,16 +14,24 @@ public static class SakikoModCmd
     public static async Task InGameDelete(Creature creature, PlayerChoiceContext ctx, CardModel cardModel,
         bool skipVisuals = false)
     {
-
-        if (!(cardModel.Keywords.Contains(SakikoModKeywords.Generated) || cardModel.Keywords.Contains(CardKeyword.Eternal)))
+        if (!creature.HasPower<CardAddPower>())
         {
-            CardCmd.ApplyKeyword(cardModel, SakikoModKeywords.ToBeDeleted);
+            await PowerCmd.Apply<CardAddPower>(ctx, creature, 1, creature, null);
+        }
+        if (!creature.HasPower<CardDeletePower>())
+        {
+            await PowerCmd.Apply<CardDeletePower>(ctx, creature, 1, creature, null);
+        }
+
+        CardCmd.ApplyKeyword(cardModel, SakikoModKeywords.ToBeDeleted);
+        if (!cardModel.Keywords.Contains(CardKeyword.Eternal))
+        {
             if (cardModel.Keywords.Contains(SakikoModKeywords.ToBeAdded))
             {
                 CardCmd.RemoveKeyword(cardModel, SakikoModKeywords.ToBeAdded);
                 creature.GetPower<CardAddPower>().DeleteCard(cardModel);
             }
-            else
+            else if (cardModel.DeckVersion != null)
             {
                 creature.GetPower<CardDeletePower>().DeleteCard(cardModel);
             }
@@ -36,7 +44,10 @@ public static class SakikoModCmd
     public static async Task InGameAdd(Creature creature, PlayerChoiceContext ctx, CardModel cardModel,
         PileType pileType, bool skipVisuals = false)
     {
-
+        if (!creature.HasPower<CardAddPower>())
+        {
+            await PowerCmd.Apply<CardAddPower>(ctx, creature, 1, creature, null);
+        }
         CardCmd.ApplyKeyword(cardModel, SakikoModKeywords.ToBeAdded);
         creature.GetPower<CardAddPower>().AddCard(cardModel);
         if (pileType != PileType.None)

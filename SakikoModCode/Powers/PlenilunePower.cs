@@ -15,7 +15,7 @@ public class PlenilunePower : CustomPowerModel
     
     private readonly List<DynamicVar> _vars = new()
     {
-        new DynamicVar("Value", 1)
+        new DynamicVar("Value", 6)
     };
     protected override IEnumerable<DynamicVar> CanonicalVars => _vars;
 
@@ -29,7 +29,7 @@ public class PlenilunePower : CustomPowerModel
 
     public override async Task AfterCardPlayed(PlayerChoiceContext ctx, CardPlay play)
     {
-        if (play.Card.Type is CardType.Attack or CardType.Skill)
+        if (play.Card.Type is CardType.Skill)
         {
             await PowerCmd.Apply<SakikoLightPower>(ctx, base.Owner, DynamicVars["Value"].BaseValue, base.Owner,
                 play.Card);

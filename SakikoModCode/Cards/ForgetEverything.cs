@@ -46,8 +46,9 @@ public class ForgetEverything : SakikoModBaseCard
             await DamageCmd.Attack(DynamicVars.Damage.BaseValue)
                 .FromCard(this).Targeting(play.Target).Execute(ctx);
         }
-        await SakikoModCmd.InGameAdd(base.Owner.Creature, ctx, base.Owner.Creature.CombatState.CreateCard<Nihil>(base.Owner),
-            PileType.Draw);
+
+        await SakikoModCmd.InGameAdd(base.Owner.Creature, ctx,
+            base.Owner.Creature.CombatState.CreateCard<Desire>(base.Owner), PileType.Draw);
     }
     
     public ForgetEverything() : base(1, CardType.Attack, CardRarity.Common, TargetType.AnyEnemy) { }

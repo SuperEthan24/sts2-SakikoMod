@@ -11,6 +11,8 @@ namespace SakikoMod.SakikoModCode.Cards;
 [Pool(typeof(SakikoModCardPool))]
 public class Desuwa : SakikoModBaseCard
 {
+    public override bool CanBeGeneratedInCombat => false;
+    public override bool CanBeGeneratedByModifiers => false;
     public override int MaxUpgradeLevel => 0;
 
     private readonly List<DynamicVar> _vars = new()

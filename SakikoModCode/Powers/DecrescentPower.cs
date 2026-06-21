@@ -15,7 +15,7 @@ public class DecrescentPower : CustomPowerModel
     
     private readonly List<DynamicVar> _vars = new()
     {
-        new DynamicVar("Value", 1)
+        new DynamicVar("Value", 6)
     };
     protected override IEnumerable<DynamicVar> CanonicalVars => _vars;
 
@@ -29,7 +29,7 @@ public class DecrescentPower : CustomPowerModel
 
     public override async Task AfterCardPlayed(PlayerChoiceContext ctx, CardPlay play)
     {
-        if (play.Card.Type is CardType.Attack or CardType.Skill)
+        if (play.Card.Type is CardType.Attack)
         {
             await PowerCmd.Apply<SakikoDarkPower>(ctx, base.Owner, DynamicVars["Value"].BaseValue, base.Owner,
                 play.Card);

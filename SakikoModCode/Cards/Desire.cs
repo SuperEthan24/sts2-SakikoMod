@@ -27,7 +27,7 @@ public class Desire : SakikoModBaseCard
     };
     protected override IEnumerable<DynamicVar> CanonicalVars => _vars;
     
-    private readonly HashSet<CardKeyword> _keywords = new() { CardKeyword.Exhaust, SakikoModKeywords.AsDefend};
+    private readonly HashSet<CardKeyword> _keywords = new() { CardKeyword.Exhaust, SakikoModKeywords.AsDefend };
     public override IEnumerable<CardKeyword> CanonicalKeywords => _keywords;
     
     private readonly HashSet<CardTag> _tags = new() { CardTag.Defend };

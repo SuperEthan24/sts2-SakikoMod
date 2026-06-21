@@ -44,7 +44,6 @@ public class ShinyRibbonRelic : CustomRelicModel
         var combatState = player.Creature.CombatState;
         if (combatState == null) return;  // 上面已 guard 过，但编译器不认
         
-        await PowerCmd.Apply<MemoryCounter>(ctx, player.Creature, 1, player.Creature, null, true);
         await PowerCmd.Apply<CardDeletePower>(ctx, player.Creature, 1, player.Creature, null, true);
         await PowerCmd.Apply<CardAddPower>(ctx, player.Creature, 1, player.Creature, null, true);
         

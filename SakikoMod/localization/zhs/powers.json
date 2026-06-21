@@ -26,11 +26,11 @@
 	"SAKIKOMOD-CRESCENT_POWER.description": "打出攻击牌时获得[gold]光芒[/gold]，打出技能牌时获得[gold]黑暗[/gold]。",
 	"SAKIKOMOD-CRESCENT_POWER.smartDescription": "打出攻击牌时获得{Value:diff()}层[gold]光芒[/gold]，打出技能牌时获得{Value:diff()}层[gold]黑暗[/gold]。",
 	"SAKIKOMOD-CRESCENT_POWER.title": "月相-新月",
-	"SAKIKOMOD-PLENILUNE_POWER.description": "打出攻击牌或技能牌时获得[gold]光芒[/gold]。",
-	"SAKIKOMOD-PLENILUNE_POWER.smartDescription": "打出攻击牌或技能牌时获得{Value:diff()}层[gold]光芒[/gold]。",
+	"SAKIKOMOD-PLENILUNE_POWER.description": "打出攻击牌时获得[gold]光芒[/gold]。",
+	"SAKIKOMOD-PLENILUNE_POWER.smartDescription": "打出攻击牌时获得{Value:diff()}层[gold]光芒[/gold]。",
 	"SAKIKOMOD-PLENILUNE_POWER.title": "月相-满月",
-	"SAKIKOMOD-DECRESCENT_POWER.description": "打出攻击牌或技能牌时获得[gold]黑暗[/gold]。",
-	"SAKIKOMOD-DECRESCENT_POWER.smartDescription": "打出攻击牌或技能牌时获得{Value:diff()}层[gold]黑暗[/gold]。",
+	"SAKIKOMOD-DECRESCENT_POWER.description": "打出技能牌时获得[gold]黑暗[/gold]。",
+	"SAKIKOMOD-DECRESCENT_POWER.smartDescription": "打出技能牌时获得{Value:diff()}层[gold]黑暗[/gold]。",
 	"SAKIKOMOD-DECRESCENT_POWER.title": "月相-残月",
 	"SAKIKOMOD-FORWARD_POWER.description": "时间将顺着正方向流动。",
 	"SAKIKOMOD-FORWARD_POWER.smartDescription": "每回合结束时，将月相变化至下一个。",
@@ -46,5 +46,8 @@
 	"SAKIKOMOD-ENTANGLEMENT_POWER.title": "时间纠缠",
 	"SAKIKOMOD-HARUHIKAGE_POWER.description": "提高[gold]光芒[/gold]与[gold]黑暗[/gold]的最大层数。\n每回合结束时获得[gold]光芒[/gold]与[gold]黑暗[/gold]。",
 	"SAKIKOMOD-HARUHIKAGE_POWER.smartDescription": "将[gold]光芒[/gold]与[gold]黑暗[/gold]的最大层数提高到60。\n每回合结束时获得{Amount}层[gold]光芒[/gold]与[gold]黑暗[/gold]。",
-	"SAKIKOMOD-HARUHIKAGE_POWER.title": "春日影"
+	"SAKIKOMOD-HARUHIKAGE_POWER.title": "春日影",
+	"SAKIKOMOD-INDIFFERENCE_POWER.description": "下回合开始时少抽牌。",
+	"SAKIKOMOD-INDIFFERENCE_POWER.smartDescription": "下回合开始时，少抽{Amount}张牌。",
+	"SAKIKOMOD-INDIFFERENCE_POWER.title": "冷漠"
 }

@@ -19,8 +19,6 @@ public static class CombatCounters
     {
         var c = p?.Creature;
         if (c == null) return;
-        if (c.HasPower<MemoryCounter>())
-            await PowerCmd.Remove<MemoryCounter>(c);
         if (c.HasPower<CardDeletePower>())
             await PowerCmd.Remove<CardDeletePower>(c);
         if (c.HasPower<CardAddPower>())
