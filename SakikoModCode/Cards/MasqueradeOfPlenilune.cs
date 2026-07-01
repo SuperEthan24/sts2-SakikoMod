@@ -17,8 +17,7 @@ public class MasqueradeOfPlenilune : SakikoCharacterBaseCard
 	
 	private readonly List<DynamicVar> _vars = new()
 	{
-		new DamageVar("MainHit", 9, ValueProp.Move),
-		new DamageVar("ExtraHit", 5, ValueProp.Move),
+		new DamageVar(7, ValueProp.Move),
 		new DynamicVar("ExtraAttack", 3)
 	};
 	protected override IEnumerable<DynamicVar> CanonicalVars => _vars;
@@ -33,22 +32,26 @@ public class MasqueradeOfPlenilune : SakikoCharacterBaseCard
 
 	protected override void OnUpgrade()
 	{
-		DynamicVars["MainHit"].UpgradeValueBy(3);
-		DynamicVars["ExtraHit"].UpgradeValueBy(2);
+		DynamicVars.Damage.UpgradeValueBy(3);
 	}
 
 	protected override async Task OnPlay(PlayerChoiceContext ctx, CardPlay play)
 	{
 		var cs = Owner.Creature.CombatState;
-		if (cs != null && cs.HittableEnemies.Count > 0)
+		if (cs != null && cs.HittableEnemies.Count > 1)
 		{
-			await DamageCmd.Attack(DynamicVars["MainHit"].BaseValue).FromCard(this).TargetingAllOpponents(cs)
-				.Execute(ctx);
+			foreach (var enemy in cs.HittableEnemies)
+			{
+				if (enemy != play.Target)
+				{
+					await DamageCmd.Attack(DynamicVars.Damage.BaseValue).FromCard(this).Targeting(enemy).Execute(ctx);
+				}
+			}
 		}
-		int num = 1 + (SakikoModCmd.IsPlenilune(base.Owner.Creature) ? (int)DynamicVars["ExtraAttack"].BaseValue : 0);
+		int num = 2 + (SakikoModCmd.IsPlenilune(base.Owner.Creature) ? (int)DynamicVars["ExtraAttack"].BaseValue : 0);
 		if (play.Target != null)
 		{
-			await DamageCmd.Attack(DynamicVars["ExtraHit"].BaseValue)
+			await DamageCmd.Attack(DynamicVars.Damage.BaseValue)
 				.FromCard(this).WithHitCount(num).Targeting(play.Target).Execute(ctx);
 		}
 	}

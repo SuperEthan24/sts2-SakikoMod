@@ -19,9 +19,8 @@ public class ReverberationOfDecrescent : SakikoCharacterBaseCard
 
 	private readonly List<DynamicVar> _vars = new()
 	{
-		new DamageVar(7, ValueProp.Move),
+		new DamageVar(8, ValueProp.Move),
 		new DynamicVar("AttackTimes", 4),
-		new DamageVar("ExtraHit", 11, ValueProp.Move)
 	};
 	protected override IEnumerable<DynamicVar> CanonicalVars => _vars;
 	
@@ -36,31 +35,28 @@ public class ReverberationOfDecrescent : SakikoCharacterBaseCard
 
 	protected override void OnUpgrade()
 	{
-		DynamicVars.Damage.UpgradeValueBy(4);
-		DynamicVars["ExtraHit"].UpgradeValueBy(3);
+		DynamicVars.Damage.UpgradeValueBy(3);
 	}
 
 	protected override async Task OnPlay(PlayerChoiceContext ctx, CardPlay play)
 	{
 		var cs = Owner.Creature.CombatState;
-		int num = (int)DynamicVars["AttackTimes"].BaseValue;
-		if (cs != null && cs.HittableEnemies.Count > 0 && num > 0)
+		int num = DynamicVars["AttackTimes"].IntValue;
+		if (cs != null && cs.HittableEnemies.Count > 0)
 		{
-			await DamageCmd.Attack(DynamicVars.Damage.BaseValue)
-				.FromCard(this).TargetingRandomOpponents(cs, allowDuplicates: true)
-				.WithHitCount(num).Execute(ctx);
-		}
-		if (!SakikoModCmd.IsDecrescent(base.Owner.Creature)) return;
-		foreach (CardModel card in PileType.Hand.GetPile(base.Owner).Cards.ToList())
-		{
-			if (cs != null && cs.HittableEnemies.Count > 0)
+			if (SakikoModCmd.IsDecrescent(base.Owner.Creature))
 			{
-				await SakikoModCmd.InGameDelete(base.Owner.Creature, ctx, card);
-				await DamageCmd.Attack(DynamicVars["ExtraHit"].BaseValue)
-					.FromCard(this).TargetingRandomOpponents(cs, allowDuplicates: true)
-					.Execute(ctx);
+				List<CardModel> list = PileType.Hand.GetPile(base.Owner).Cards.ToList();
+				int cardCount = list.Count;
+				foreach (CardModel item in list)
+				{
+					await SakikoModCmd.InGameDelete(base.Owner.Creature, ctx, item);
+				}
+
+				num += cardCount;
 			}
-			else break;
+			await DamageCmd.Attack(base.DynamicVars.Damage.BaseValue).WithHitCount(num).FromCard(this)
+				.TargetingRandomOpponents(cs).Execute(ctx);
 		}
 	}
 
