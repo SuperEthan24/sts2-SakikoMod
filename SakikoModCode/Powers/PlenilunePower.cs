@@ -29,7 +29,7 @@ public class PlenilunePower : CustomPowerModel
 
     public override async Task AfterCardPlayed(PlayerChoiceContext ctx, CardPlay play)
     {
-        if (play.Card.Type is CardType.Skill)
+        if (play.Card.Type is CardType.Attack)
         {
             await PowerCmd.Apply<SakikoLightPower>(ctx, base.Owner, DynamicVars["Value"].BaseValue, base.Owner,
                 play.Card);

@@ -1,6 +1,6 @@
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 
-namespace SakikoMod.SakikoModCode.Character;
+namespace SakikoMod.SakikoModCode;
 
 public class GoldCostVar : DynamicVar
 {

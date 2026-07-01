@@ -16,8 +16,8 @@ using SakikoMod.SakikoModCode.Powers;
 
 namespace SakikoMod.SakikoModCode.Cards;
 
-[Pool(typeof(SakikoModCardPool))]
-public class Oblivion : SakikoModBaseCard
+[Pool(typeof(SakikoCharacterCardPool))]
+public class Oblivion : SakikoCharacterBaseCard
 {
     public override bool CanBeGeneratedInCombat => false;
     public override bool CanBeGeneratedByModifiers => false;

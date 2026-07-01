@@ -16,8 +16,8 @@ using SakikoMod.SakikoModCode.Character;
 
 namespace SakikoMod.SakikoModCode.Cards;
 
-[Pool(typeof(SakikoModCardPool))]
-public class GoldAttack : SakikoModBaseCard
+[Pool(typeof(SakikoCharacterCardPool))]
+public class GoldAttack : SakikoCharacterBaseCard
 {
     public override bool CanBeGeneratedInCombat => false;
     public override bool CanBeGeneratedByModifiers => false;

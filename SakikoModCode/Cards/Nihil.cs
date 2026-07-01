@@ -12,8 +12,8 @@ using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.ValueProps;
 using SakikoMod.SakikoModCode.Character;
 
-[Pool(typeof(SakikoModCardPool))]
-public class Nihil : SakikoModBaseCard
+[Pool(typeof(SakikoCharacterCardPool))]
+public class Nihil : SakikoCharacterBaseCard
 {
     public override bool CanBeGeneratedInCombat => false;
     public override bool CanBeGeneratedByModifiers => false;

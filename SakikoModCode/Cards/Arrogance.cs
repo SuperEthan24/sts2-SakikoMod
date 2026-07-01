@@ -10,8 +10,8 @@ using SakikoMod.SakikoModCode.Character;
 
 namespace SakikoMod.SakikoModCode.Cards;
 
-[Pool(typeof(SakikoModCardPool))]
-public class Arrogance : SakikoModBaseCard
+[Pool(typeof(SakikoCharacterCardPool))]
+public class Arrogance : SakikoCharacterBaseCard
 {
 	public override int MaxUpgradeLevel => 0;
 	public override bool HasTurnEndInHandEffect => true;

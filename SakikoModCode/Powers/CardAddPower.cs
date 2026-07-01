@@ -47,5 +47,6 @@ public class CardAddPower : CustomPowerModel
             await CardPileCmd.Add(card, PileType.Deck);
         }
         _cards.Clear();
+        await PowerCmd.Remove(this);
     }
 }

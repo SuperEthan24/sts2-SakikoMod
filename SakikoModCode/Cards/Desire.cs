@@ -15,8 +15,8 @@ using SakikoMod.SakikoModCode.Character;
 
 namespace SakikoMod.SakikoModCode.Cards;
 
-[Pool(typeof(SakikoModCardPool))]
-public class Desire : SakikoModBaseCard
+[Pool(typeof(SakikoCharacterCardPool))]
+public class Desire : SakikoCharacterBaseCard
 {
     public override bool CanBeGeneratedInCombat => false;
     public override bool CanBeGeneratedByModifiers => false;

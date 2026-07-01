@@ -9,8 +9,8 @@ using SakikoMod.SakikoModCode.Character;
 
 namespace SakikoMod.SakikoModCode.Cards;
 
-[Pool(typeof(SakikoModCardPool))]
-public class EnergyDrink : SakikoModBaseCard
+[Pool(typeof(SakikoCharacterCardPool))]
+public class EnergyDrink : SakikoCharacterBaseCard
 {
     protected override bool ShouldGlowRedInternal => !IsPlayable;
     protected override bool IsPlayable => base.Owner.Gold >= DynamicVars["GoldCost"].BaseValue;

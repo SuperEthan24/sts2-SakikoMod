@@ -12,8 +12,8 @@ using SakikoMod.SakikoModCode.Character;
 
 namespace SakikoMod.SakikoModCode.Cards;
 
-[Pool(typeof(SakikoModCardPool))]
-public class PhantomOfTaki : SakikoModBaseCard
+[Pool(typeof(SakikoCharacterCardPool))]
+public class PhantomOfTaki : SakikoCharacterBaseCard
 {
 	private readonly HashSet<SakikoCardTag> _sakikoTags = new() { SakikoCardTag.Phantom };
 	protected override HashSet<SakikoCardTag> CanonicalSakikoTags => _sakikoTags;

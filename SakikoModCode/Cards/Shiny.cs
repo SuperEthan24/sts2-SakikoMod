@@ -15,8 +15,8 @@ using SakikoMod.SakikoModCode.Character;
 
 namespace SakikoMod.SakikoModCode.Cards;
 
-[Pool(typeof(SakikoModCardPool))]
-public class Shiny : SakikoModBaseCard
+[Pool(typeof(SakikoCharacterCardPool))]
+public class Shiny : SakikoCharacterBaseCard
 {
     protected override bool ShouldGlowGoldInternal => base.Owner.PlayerCombatState.Energy <= base.DynamicVars["Limit"].IntValue;
     

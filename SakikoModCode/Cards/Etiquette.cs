@@ -9,8 +9,8 @@ using SakikoMod.SakikoModCode.Character;
 
 namespace SakikoMod.SakikoModCode.Cards;
 
-[Pool(typeof(SakikoModCardPool))]
-public class Etiquette : SakikoModBaseCard
+[Pool(typeof(SakikoCharacterCardPool))]
+public class Etiquette : SakikoCharacterBaseCard
 {
     private readonly HashSet<CardKeyword> _keywords = new() { CardKeyword.Ethereal };
     public override IEnumerable<CardKeyword> CanonicalKeywords => _keywords;

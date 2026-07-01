@@ -44,5 +44,6 @@ public class CardDeletePower : CustomPowerModel
             }
         }
         _cards.Clear();
+        await PowerCmd.Remove(this);
     }
 }

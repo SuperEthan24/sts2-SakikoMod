@@ -4,7 +4,7 @@ using Godot;
 
 namespace SakikoMod.SakikoModCode.Character;
 
-public class SakikoModRelicPool : CustomRelicPoolModel
+public class SakikoCharacterRelicPool : CustomRelicPoolModel
 {
     public override bool IsShared => false;
     public override string? BigEnergyIconPath  => "res://SakikoMod/images/characters/energy_big.png";

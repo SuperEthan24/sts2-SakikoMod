@@ -4,7 +4,7 @@ using Godot;
 
 namespace SakikoMod.SakikoModCode.Character;
 
-public class SakikoModCardPool : CustomCardPoolModel
+public class SakikoCharacterCardPool : CustomCardPoolModel
 {
     public override string Title => "test_hero_model.title";
 

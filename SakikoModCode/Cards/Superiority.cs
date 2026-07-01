@@ -8,8 +8,8 @@ using SakikoMod.SakikoModCode.Character;
 
 namespace SakikoMod.SakikoModCode.Cards;
 
-[Pool(typeof(SakikoModCardPool))]
-public class Superiority : SakikoModBaseCard
+[Pool(typeof(SakikoCharacterCardPool))]
+public class Superiority : SakikoCharacterBaseCard
 {
 	public override int MaxUpgradeLevel => 0;
 	public override bool HasTurnEndInHandEffect => true;

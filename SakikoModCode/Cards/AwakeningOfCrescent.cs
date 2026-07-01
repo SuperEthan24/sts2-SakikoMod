@@ -10,8 +10,8 @@ using SakikoMod.SakikoModCode.Powers;
 
 namespace SakikoMod.SakikoModCode.Cards;
 
-[Pool(typeof(SakikoModCardPool))]
-public class AwakeningOfCrescent : SakikoModBaseCard
+[Pool(typeof(SakikoCharacterCardPool))]
+public class AwakeningOfCrescent : SakikoCharacterBaseCard
 {
     protected override bool ShouldGlowGoldInternal => SakikoModCmd.IsCrescent(base.Owner.Creature);
 
@@ -47,5 +47,5 @@ public class AwakeningOfCrescent : SakikoModBaseCard
         }
     }
 
-    public AwakeningOfCrescent() : base(2, CardType.Attack, CardRarity.Common, TargetType.AnyEnemy) {}
+    public AwakeningOfCrescent() : base(1, CardType.Attack, CardRarity.Common, TargetType.AnyEnemy) {}
 }

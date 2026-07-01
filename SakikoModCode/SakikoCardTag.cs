@@ -1,4 +1,4 @@
-namespace SakikoMod.SakikoModCode.Character;
+namespace SakikoMod.SakikoModCode;
 
 public enum SakikoCardTag
 {

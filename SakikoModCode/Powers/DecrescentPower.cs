@@ -29,7 +29,7 @@ public class DecrescentPower : CustomPowerModel
 
     public override async Task AfterCardPlayed(PlayerChoiceContext ctx, CardPlay play)
     {
-        if (play.Card.Type is CardType.Attack)
+        if (play.Card.Type is CardType.Skill)
         {
             await PowerCmd.Apply<SakikoDarkPower>(ctx, base.Owner, DynamicVars["Value"].BaseValue, base.Owner,
                 play.Card);

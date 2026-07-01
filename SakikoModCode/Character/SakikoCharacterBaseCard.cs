@@ -9,7 +9,7 @@ using MegaCrit.Sts2.Core.Models;
 
 namespace SakikoMod.SakikoModCode.Character;
 
-public abstract class SakikoModBaseCard : CustomCardModel
+public abstract class SakikoCharacterBaseCard : CustomCardModel
 {
     private HashSet<SakikoCardTag>? _sakikoTags;
     protected virtual HashSet<SakikoCardTag> CanonicalSakikoTags => new HashSet<SakikoCardTag>();
@@ -21,7 +21,7 @@ public abstract class SakikoModBaseCard : CustomCardModel
         }
     }
 
-    protected SakikoModBaseCard(int baseCost, CardType type, CardRarity rarity, TargetType target,
+    protected SakikoCharacterBaseCard(int baseCost, CardType type, CardRarity rarity, TargetType target,
         bool showInCardLibrary = true, bool autoAdd = true)
         : base(baseCost, type, rarity, target, showInCardLibrary, autoAdd) { }
     

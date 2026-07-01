@@ -11,8 +11,8 @@ using SakikoMod.SakikoModCode.Character;
 
 namespace SakikoMod.SakikoModCode.Cards;
 
-[Pool(typeof(SakikoModCardPool))]
-public class SymbolIFire : SakikoModBaseCard
+[Pool(typeof(SakikoCharacterCardPool))]
+public class SymbolIFire : SakikoCharacterBaseCard
 {
     private readonly List<DynamicVar> _vars = new()
     {

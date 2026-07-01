@@ -9,8 +9,8 @@ using SakikoMod.SakikoModCode.Character;
 
 namespace SakikoMod.SakikoModCode.Cards;
 
-[Pool(typeof(SakikoModCardPool))]
-public class Relax : SakikoModBaseCard
+[Pool(typeof(SakikoCharacterCardPool))]
+public class Relax : SakikoCharacterBaseCard
 {
     public override int MaxUpgradeLevel => 0;
 

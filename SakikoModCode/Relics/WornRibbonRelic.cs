@@ -23,7 +23,7 @@ using SakikoMod.SakikoModCode.Rewards;
 
 namespace SakikoMod.SakikoModCode.Relics;
 
-[Pool(typeof(SakikoModRelicPool))]
+[Pool(typeof(SakikoCharacterRelicPool))]
 public class WornRibbonRelic : CustomRelicModel
 {
     [SavedProperty]

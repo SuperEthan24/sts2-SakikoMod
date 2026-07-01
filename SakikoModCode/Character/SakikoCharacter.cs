@@ -14,7 +14,7 @@ using Oblivion = SakikoMod.SakikoModCode.Cards.Oblivion;
 namespace SakikoMod.SakikoModCode.Character;
 
 // ReSharper disable once ClassNeverInstantiated.Global
-public class SakikoMod : CustomCharacterModel
+public class SakikoCharacter : CustomCharacterModel
 {
     /// <summary>所有借用资源都从这个角色派生。改成 "necrobinder" / "silent" 等一键换占位风格。</summary>
     private const string BorrowFrom = "ironclad";
@@ -103,7 +103,7 @@ public class SakikoMod : CustomCharacterModel
         ModelDb.Relic<WornRibbonRelic>()
     ];
 
-    public override CardPoolModel CardPool => ModelDb.CardPool<SakikoModCardPool>();
-    public override RelicPoolModel RelicPool => ModelDb.RelicPool<SakikoModRelicPool>();
-    public override PotionPoolModel PotionPool => ModelDb.PotionPool<SakikoModPotionPool>();
+    public override CardPoolModel CardPool => ModelDb.CardPool<SakikoCharacterCardPool>();
+    public override RelicPoolModel RelicPool => ModelDb.RelicPool<SakikoCharacterRelicPool>();
+    public override PotionPoolModel PotionPool => ModelDb.PotionPool<SakikoCharacterPotionPool>();
 }

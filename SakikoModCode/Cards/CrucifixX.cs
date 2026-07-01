@@ -15,8 +15,8 @@ using SakikoMod.SakikoModCode.Character;
 
 namespace SakikoMod.SakikoModCode.Cards;
 
-[Pool(typeof(SakikoModCardPool))]
-public class CrucifixX : SakikoModBaseCard
+[Pool(typeof(SakikoCharacterCardPool))]
+public class CrucifixX : SakikoCharacterBaseCard
 {
     protected override bool HasEnergyCostX => true;
     protected override bool ShouldGlowGoldInternal => base.Owner.PlayerCombatState.Energy >= base.DynamicVars.Energy.IntValue;

@@ -15,8 +15,8 @@ using SakikoMod.SakikoModCode.Character;
 
 namespace SakikoMod.SakikoModCode.Cards;
 
-[Pool(typeof(SakikoModCardPool))]
-public class SkkDefend : SakikoModBaseCard
+[Pool(typeof(SakikoCharacterCardPool))]
+public class SkkDefend : SakikoCharacterBaseCard
 {
     // 初始卡，不应被印牌/变化牌随机产生
     public override bool CanBeGeneratedInCombat => false;

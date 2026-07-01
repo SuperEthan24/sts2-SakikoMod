@@ -4,7 +4,7 @@ using Godot;
 
 namespace SakikoMod.SakikoModCode.Character;
 
-public class SakikoModPotionPool : CustomPotionPoolModel
+public class SakikoCharacterPotionPool : CustomPotionPoolModel
 {
 //    public override Color LabOutlineColor => SakikoMod.Color;
 

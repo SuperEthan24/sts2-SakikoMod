@@ -15,8 +15,8 @@ using SakikoMod.SakikoModCode.Character;
 
 namespace SakikoMod.SakikoModCode.Cards;
 
-[Pool(typeof(SakikoModCardPool))]
-public class SkkStrike : SakikoModBaseCard
+[Pool(typeof(SakikoCharacterCardPool))]
+public class SkkStrike : SakikoCharacterBaseCard
 {
 //    public override string PortraitPath => "res://MzmChar/cards/strike.png";
     

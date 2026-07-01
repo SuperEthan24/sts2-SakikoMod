@@ -10,8 +10,8 @@ using SakikoMod.SakikoModCode.Character;
 
 namespace SakikoMod.SakikoModCode.Cards;
 
-[Pool(typeof(SakikoModCardPool))]
-public class WannaBeHuman : SakikoModBaseCard
+[Pool(typeof(SakikoCharacterCardPool))]
+public class WannaBeHuman : SakikoCharacterBaseCard
 {
     private readonly List<DynamicVar> _vars = new()
     {

@@ -1,8 +1,9 @@
-using BaseLib.Patches.Compatibility;   // CustomEnumAttribute
-using BaseLib.Patches.Content;          // KeywordPropertiesAttribute, AutoKeywordPosition
+using BaseLib.Patches.Content;
 using MegaCrit.Sts2.Core.Entities.Cards;
+// CustomEnumAttribute
+// KeywordPropertiesAttribute, AutoKeywordPosition
 
-namespace SakikoMod.SakikoModCode.Character;
+namespace SakikoMod.SakikoModCode;
 
 public static class SakikoModKeywords
 {

@@ -10,8 +10,8 @@ using SakikoMod.SakikoModCode.Powers;
 
 namespace SakikoMod.SakikoModCode.Cards;
 
-[Pool(typeof(SakikoModCardPool))]
-public class MasqueradeOfPlenilune : SakikoModBaseCard
+[Pool(typeof(SakikoCharacterCardPool))]
+public class MasqueradeOfPlenilune : SakikoCharacterBaseCard
 {
 	protected override bool ShouldGlowGoldInternal => SakikoModCmd.IsPlenilune(base.Owner.Creature);
 	
@@ -45,7 +45,7 @@ public class MasqueradeOfPlenilune : SakikoModBaseCard
 			await DamageCmd.Attack(DynamicVars["MainHit"].BaseValue).FromCard(this).TargetingAllOpponents(cs)
 				.Execute(ctx);
 		}
-		int num = 1 + (base.Owner.Creature.HasPower<PlenilunePower>() ? (int)DynamicVars["ExtraAttack"].BaseValue : 0);
+		int num = 1 + (SakikoModCmd.IsPlenilune(base.Owner.Creature) ? (int)DynamicVars["ExtraAttack"].BaseValue : 0);
 		if (play.Target != null)
 		{
 			await DamageCmd.Attack(DynamicVars["ExtraHit"].BaseValue)

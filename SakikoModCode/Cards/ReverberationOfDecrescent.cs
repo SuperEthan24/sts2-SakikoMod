@@ -1,5 +1,6 @@
 using BaseLib.Utils;
 using MegaCrit.Sts2.Core.Commands;
+using MegaCrit.Sts2.Core.Commands.Builders;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
@@ -11,8 +12,8 @@ using SakikoMod.SakikoModCode.Powers;
 
 namespace SakikoMod.SakikoModCode.Cards;
 
-[Pool(typeof(SakikoModCardPool))]
-public class ReverberationOfDecrescent : SakikoModBaseCard
+[Pool(typeof(SakikoCharacterCardPool))]
+public class ReverberationOfDecrescent : SakikoCharacterBaseCard
 {
 	protected override bool ShouldGlowGoldInternal => SakikoModCmd.IsDecrescent(base.Owner.Creature);
 
@@ -49,7 +50,7 @@ public class ReverberationOfDecrescent : SakikoModBaseCard
 				.FromCard(this).TargetingRandomOpponents(cs, allowDuplicates: true)
 				.WithHitCount(num).Execute(ctx);
 		}
-
+		if (!SakikoModCmd.IsDecrescent(base.Owner.Creature)) return;
 		foreach (CardModel card in PileType.Hand.GetPile(base.Owner).Cards.ToList())
 		{
 			if (cs != null && cs.HittableEnemies.Count > 0)
