@@ -29,7 +29,7 @@
 	"SAKIKOMOD-PHANTOM_OF_TAKI.title": "立希的幻影",
 	"SAKIKOMOD-PHANTOM_OF_SOYO.description": "消耗一张牌。\n造成{Damage:diff()}点伤害{AttackTimes:diff()}次。\n如果被消耗的牌是[gold]诅咒[/gold]，则[gold]删除[/gold]这张牌，额外造成{ExtraAttack:diff()}次伤害。\n将一张[gold]冷漠[/gold]放入弃牌堆和牌组。",
 	"SAKIKOMOD-PHANTOM_OF_SOYO.title": "素世的幻影",
-	"SAKIKOMOD-PHANTOM_OF_TOMORI.description": "获得{Block:diff()}点[gold]格挡[/gold]，将一张[gold]巨石[/gold]置入手中。\n将一张[gold]忽视[/gold]置入弃牌堆和牌组。",
+	"SAKIKOMOD-PHANTOM_OF_TOMORI.description": "获得{Block:diff()}点[gold]格挡[/gold]，将一张{IfUpgraded:show:[gold]升级过[/gold]的}[gold]巨石[/gold]置入手中。\n将一张[gold]忽视[/gold]置入弃牌堆和牌组。",
 	"SAKIKOMOD-PHANTOM_OF_TOMORI.title": "灯的幻影",
 	"SAKIKOMOD-SHINY.description": "造成{Damage:diff()}点伤害。\n若拥有{Limit:diff()}点能量或更少，获得{Energy:energyIcons()}。",
 	"SAKIKOMOD-SHINY.title": "闪烁",

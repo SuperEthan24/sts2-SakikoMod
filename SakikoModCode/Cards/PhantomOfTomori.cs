@@ -29,8 +29,13 @@ public class PhantomOfTomori : SakikoCharacterBaseCard
 		{
 			yield return HoverTipFactory.FromKeyword(SakikoModKeywords.Addition);
 			yield return HoverTipFactory.FromCard<Ignorance>();
-			yield return HoverTipFactory.FromCard<GiantRock>();
+			yield return IsUpgraded ? HoverTipFactory.FromCard<GiantRock>(true) : HoverTipFactory.FromCard<GiantRock>();
 		}
+	}
+
+	protected override void OnUpgrade()
+	{
+		DynamicVars.Block.UpgradeValueBy(4);
 	}
 
 	protected override async Task OnPlay(PlayerChoiceContext ctx, CardPlay play)
