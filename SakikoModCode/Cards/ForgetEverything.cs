@@ -4,6 +4,7 @@ using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
+using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.ValueProps;
 using SakikoMod.SakikoModCode.Character;
 
@@ -14,19 +15,16 @@ public class ForgetEverything : SakikoCharacterBaseCard
 {
     private readonly List<DynamicVar> _vars = new()
     {
-        new DamageVar(8, ValueProp.Move),
+        new DamageVar(5, ValueProp.Move),
         new ForwardVar(1)
     };
     protected override IEnumerable<DynamicVar> CanonicalVars => _vars;
-    
-    private readonly HashSet<CardKeyword> _keywords = new() { SakikoModKeywords.ForwardKeyword };
-    public override IEnumerable<CardKeyword> CanonicalKeywords => _keywords;
 
     protected override IEnumerable<IHoverTip> ExtraHoverTips
     {
         get
         {
-            yield return HoverTipFactory.FromCard<Desire>();
+            yield return HoverTipFactory.FromKeyword(SakikoModKeywords.Deletion);
         }
     }
 
@@ -37,19 +35,17 @@ public class ForgetEverything : SakikoCharacterBaseCard
 
     protected override async Task OnPlay(PlayerChoiceContext ctx, CardPlay play)
     {
-        for (int i = 0; i < DynamicVars["Forward"].BaseValue; i++)
-        {
-            await SakikoModCmd.TimeForward(base.Owner.Creature, ctx);
-        }
+        await SakikoModCmd.TimeForward(base.Owner.Creature, ctx);
+        IEnumerable<CardModel>? cards = PileType.Draw.GetPile(base.Owner).Cards
+            .Where((CardModel c) => c.Type is CardType.Curse);
+        decimal cardCount = cards.Count();
+        await SakikoModCmd.InGameDelete(base.Owner.Creature, ctx, cards);
         if (play.Target != null)
         {
-            await DamageCmd.Attack(DynamicVars.Damage.BaseValue)
-                .FromCard(this).Targeting(play.Target).Execute(ctx);
+            await DamageCmd.Attack(DynamicVars.Damage.BaseValue).FromCard(this, play).WithHitCount((int)cardCount + 1)
+                .Targeting(play.Target).Execute(ctx);
         }
-
-        await SakikoModCmd.InGameAdd(base.Owner.Creature, ctx,
-            base.Owner.Creature.CombatState.CreateCard<Desire>(base.Owner), PileType.Draw);
     }
     
-    public ForgetEverything() : base(1, CardType.Attack, CardRarity.Common, TargetType.AnyEnemy) { }
+    public ForgetEverything() : base(2, CardType.Attack, CardRarity.Uncommon, TargetType.AnyEnemy) { }
 }

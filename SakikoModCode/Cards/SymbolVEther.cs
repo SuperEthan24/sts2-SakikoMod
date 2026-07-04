@@ -95,7 +95,7 @@ public class SymbolVEther : SakikoCharacterBaseCard
         int num = (int)(CurrentAttackTimes + DynamicVars["Deletion"].BaseValue);
         if (cs != null && cs.HittableEnemies.Count > 0)
         {
-            await DamageCmd.Attack(DynamicVars.Damage.BaseValue).FromCard(this).TargetingAllOpponents(cs)
+            await DamageCmd.Attack(DynamicVars.Damage.BaseValue).FromCard(this, play).TargetingAllOpponents(cs)
                 .WithHitCount(num).Execute(ctx);
         }
     }

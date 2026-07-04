@@ -1,15 +1,8 @@
-using System.Collections.Generic;
-using System.Threading.Tasks;
-using BaseLib.Abstracts;
 using BaseLib.Utils;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
-using MegaCrit.Sts2.Core.HoverTips;
-using MegaCrit.Sts2.Core.Localization;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
-using MegaCrit.Sts2.Core.Models;
-using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.ValueProps;
 using SakikoMod.SakikoModCode.Character;
 using SakikoMod.SakikoModCode.Powers;
@@ -17,7 +10,7 @@ using SakikoMod.SakikoModCode.Powers;
 namespace SakikoMod.SakikoModCode.Cards;
 
 [Pool(typeof(SakikoCharacterCardPool))]
-public class Oblivion : SakikoCharacterBaseCard
+public class Oblivionis : SakikoCharacterBaseCard
 {
     public override bool CanBeGeneratedInCombat => false;
     public override bool CanBeGeneratedByModifiers => false;
@@ -42,9 +35,9 @@ public class Oblivion : SakikoCharacterBaseCard
         if (play.Target != null)
         {
             await DamageCmd.Attack(DynamicVars.Damage.BaseValue)
-                .FromCard(this).Targeting(play.Target).Execute(ctx);
+                .FromCard(this, play).Targeting(play.Target).Execute(ctx);
         }
     }
     
-    public Oblivion() : base(2, CardType.Attack, CardRarity.Basic, TargetType.AnyEnemy) { }
+    public Oblivionis() : base(2, CardType.Attack, CardRarity.Basic, TargetType.AnyEnemy) { }
 }

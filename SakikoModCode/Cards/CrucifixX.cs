@@ -63,7 +63,7 @@ public class CrucifixX : SakikoCharacterBaseCard
         if (cs != null && cs.HittableEnemies.Count > 0 && num > 0)
         {
             await DamageCmd.Attack(DynamicVars.Damage.BaseValue)
-                .FromCard(this).TargetingRandomOpponents(cs, allowDuplicates: true)
+                .FromCard(this, play).TargetingRandomOpponents(cs, allowDuplicates: true)
                 .WithHitCount(num).Execute(ctx);
         }
     }

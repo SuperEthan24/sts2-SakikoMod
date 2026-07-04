@@ -44,7 +44,7 @@ public class MasqueradeOfPlenilune : SakikoCharacterBaseCard
 			{
 				if (enemy != play.Target)
 				{
-					await DamageCmd.Attack(DynamicVars.Damage.BaseValue).FromCard(this).Targeting(enemy).Execute(ctx);
+					await DamageCmd.Attack(DynamicVars.Damage.BaseValue).FromCard(this, play).Targeting(enemy).Execute(ctx);
 				}
 			}
 		}
@@ -52,7 +52,7 @@ public class MasqueradeOfPlenilune : SakikoCharacterBaseCard
 		if (play.Target != null)
 		{
 			await DamageCmd.Attack(DynamicVars.Damage.BaseValue)
-				.FromCard(this).WithHitCount(num).Targeting(play.Target).Execute(ctx);
+				.FromCard(this, play).WithHitCount(num).Targeting(play.Target).Execute(ctx);
 		}
 	}
 

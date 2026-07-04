@@ -40,7 +40,7 @@ public class Shiny : SakikoCharacterBaseCard
         if (play.Target != null)
         {
             await DamageCmd.Attack(DynamicVars.Damage.BaseValue)
-                .FromCard(this).Targeting(play.Target).Execute(ctx);
+                .FromCard(this, play).Targeting(play.Target).Execute(ctx);
         }
 
         if (base.Owner.PlayerCombatState.Energy + base.EnergyCost.GetAmountToSpend() <= base.DynamicVars["Limit"].IntValue)

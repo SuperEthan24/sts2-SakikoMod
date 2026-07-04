@@ -52,7 +52,7 @@ public class GoldAttack : SakikoCharacterBaseCard
         if (play.Target != null)
         {
             await PlayerCmd.LoseGold(DynamicVars["GoldCost"].BaseValue, base.Owner);
-            await DamageCmd.Attack(DynamicVars.Damage.BaseValue).FromCard(this).Targeting(play.Target).Execute(ctx);
+            await DamageCmd.Attack(DynamicVars.Damage.BaseValue).FromCard(this, play).Targeting(play.Target).Execute(ctx);
             await PowerCmd.Apply<VulnerablePower>(ctx, play.Target, base.DynamicVars.Vulnerable.BaseValue, base.Owner.Creature, this);
         }
     }

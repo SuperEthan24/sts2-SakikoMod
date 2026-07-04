@@ -25,6 +25,7 @@ using MegaCrit.Sts2.Core.Runs.History;
 using MegaCrit.Sts2.Core.Saves.Runs;
 using MegaCrit.Sts2.Core.TestSupport;
 using SakikoMod.SakikoModCode.Cards;
+using SakikoMod.SakikoModCode.Character;
 
 namespace SakikoMod.SakikoModCode.Rewards;
 
@@ -48,7 +49,7 @@ public class RibbonReward : CustomReward
         bool endSelection = false;
         List<CardModel> chosenCardIds = new List<CardModel>();
         CardCreationOptions options = new CardCreationOptions(
-            _ribbonCards, CardCreationSource.None,
+            [ModelDb.CardPool<SakikoCharacterCardPool>()], CardCreationSource.None,
             CardRarityOddsType.Uniform).WithFlags(CardCreationFlags.NoModifications);
         CardReward reward = new CardReward(_ribbonCards, CardCreationSource.Other, base.Player, options);
         IReadOnlyList<CardRewardAlternative> cardRewardOption = CardRewardAlternative.Generate(reward);

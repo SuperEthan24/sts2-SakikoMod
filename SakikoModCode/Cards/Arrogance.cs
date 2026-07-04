@@ -27,10 +27,10 @@ public class Arrogance : SakikoCharacterBaseCard
 	private readonly HashSet<CardKeyword> _keywords = new() { CardKeyword.Unplayable, CardKeyword.Ethereal };
 	public override IEnumerable<CardKeyword> CanonicalKeywords => _keywords;
 
-	public override async Task AfterCardPlayed(PlayerChoiceContext ctx, CardPlay cardPlay)
+	public override async Task AfterCardPlayed(PlayerChoiceContext ctx, CardPlay play)
 	{
 		if (this.Pile != null && this.Pile.Type == PileType.Hand)
-			await CreatureCmd.Damage(ctx, base.Owner.Creature, DynamicVars.Damage, this);
+			await CreatureCmd.Damage(ctx, base.Owner.Creature, DynamicVars.Damage, this, play);
 	}
 
 	public Arrogance() : base(-1, CardType.Curse, CardRarity.Curse, TargetType.None) {}

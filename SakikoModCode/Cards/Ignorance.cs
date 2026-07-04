@@ -35,7 +35,7 @@ public class Ignorance : SakikoCharacterBaseCard
 
 		if (this.Pile is { Type: PileType.Exhaust })
 		{
-			await CreatureCmd.Damage(ctx, base.Owner.Creature, DynamicVars.Damage, this);
+			await CreatureCmd.Damage(ctx, base.Owner.Creature, DynamicVars.Damage, base.Owner.Creature);
 		}
 	}
 

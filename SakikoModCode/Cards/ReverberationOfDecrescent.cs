@@ -55,7 +55,7 @@ public class ReverberationOfDecrescent : SakikoCharacterBaseCard
 
 				num += cardCount;
 			}
-			await DamageCmd.Attack(base.DynamicVars.Damage.BaseValue).WithHitCount(num).FromCard(this)
+			await DamageCmd.Attack(base.DynamicVars.Damage.BaseValue).WithHitCount(num).FromCard(this, play)
 				.TargetingRandomOpponents(cs).Execute(ctx);
 		}
 	}

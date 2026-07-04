@@ -25,6 +25,6 @@ public static class ArchaicToothSakikoPatch
     static void Postfix(ref Dictionary<ModelId, CardModel> __result)
     {
         // Oblivion → Symbol V Ether（古老牙齿把初始牌转化为先古版）
-        __result[ModelDb.Card<Oblivion>().Id] = ModelDb.Card<SymbolVEther>();
+        __result[ModelDb.Card<Oblivionis>().Id] = ModelDb.Card<SymbolVEther>();
     }
 }

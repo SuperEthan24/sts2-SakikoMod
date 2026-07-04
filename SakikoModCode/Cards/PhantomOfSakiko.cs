@@ -31,7 +31,7 @@ public class PhantomOfSakiko : SakikoCharacterBaseCard
 		if (play.Target != null)
 		{
 			await DamageCmd.Attack(DynamicVars.CalculatedDamage)
-				.FromCard(this).Targeting(play.Target).Execute(ctx);
+				.FromCard(this, play).Targeting(play.Target).Execute(ctx);
 		}
 	}
 

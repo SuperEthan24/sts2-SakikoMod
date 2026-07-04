@@ -39,6 +39,38 @@ public static class SakikoModCmd
         await CardCmd.Exhaust(ctx, cardModel, false, skipVisuals);
         await CardPileCmd.RemoveFromCombat(cardModel, true);
     }
+    public static async Task InGameDelete(Creature creature, PlayerChoiceContext ctx, IEnumerable<CardModel> cardModels,
+        bool skipVisuals = false)
+    {
+        if (!creature.HasPower<CardAddPower>())
+        {
+            await PowerCmd.Apply<CardAddPower>(ctx, creature, 1, creature, null);
+        }
+        if (!creature.HasPower<CardDeletePower>())
+        {
+            await PowerCmd.Apply<CardDeletePower>(ctx, creature, 1, creature, null);
+        }
+
+        foreach (var c in cardModels.ToList())
+        {
+            CardCmd.ApplyKeyword(c, SakikoModKeywords.ToBeDeleted);
+            if (!c.Keywords.Contains(CardKeyword.Eternal))
+            {
+                if (c.Keywords.Contains(SakikoModKeywords.ToBeAdded))
+                {
+                    CardCmd.RemoveKeyword(c, SakikoModKeywords.ToBeAdded);
+                    creature.GetPower<CardAddPower>().DeleteCard(c);
+                }
+                else if (c.DeckVersion != null)
+                {
+                    creature.GetPower<CardDeletePower>().DeleteCard(c);
+                }
+            }
+
+            await CardCmd.Exhaust(ctx, c);
+            await CardPileCmd.RemoveFromCombat(c, true);
+        }
+    }
 
     public static async Task InGameAdd(Creature creature, PlayerChoiceContext ctx, CardModel cardModel,
         PileType pileType, bool skipVisuals = false)

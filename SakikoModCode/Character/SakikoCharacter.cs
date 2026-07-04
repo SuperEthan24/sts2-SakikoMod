@@ -9,7 +9,6 @@ using MegaCrit.Sts2.Core.Models.Relics;
 using SakikoMod.SakikoModCode.Cards;
 using MegaCrit.Sts2.Core.Helpers;
 using SakikoMod.SakikoModCode.Relics;
-using Oblivion = SakikoMod.SakikoModCode.Cards.Oblivion;
 
 namespace SakikoMod.SakikoModCode.Character;
 
@@ -94,7 +93,7 @@ public class SakikoCharacter : CustomCharacterModel
     public override IEnumerable<CardModel> StartingDeck =>
         Enumerable.Repeat<CardModel>(ModelDb.Card<SkkStrike>(), 5)
             .Concat(Enumerable.Repeat<CardModel>(ModelDb.Card<SkkDefend>(), 5))
-            .Append<CardModel>(ModelDb.Card<Oblivion>())
+            .Append<CardModel>(ModelDb.Card<Oblivionis>())
             .Append<CardModel>(ModelDb.Card<GoldAttack>())
             .Append<CardModel>(ModelDb.Card<DeliverNewspaper>());
 

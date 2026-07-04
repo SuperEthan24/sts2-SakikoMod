@@ -42,7 +42,7 @@ public class AwakeningOfCrescent : SakikoCharacterBaseCard
         if (SakikoModCmd.IsCrescent(base.Owner.Creature)) hits += (int)DynamicVars["ExtraAttack"].BaseValue;
         if (play.Target != null)
         {
-            await DamageCmd.Attack(DynamicVars.Damage.BaseValue).FromCard(this).Targeting(play.Target)
+            await DamageCmd.Attack(DynamicVars.Damage.BaseValue).FromCard(this, play).Targeting(play.Target)
                 .WithHitCount(hits).Execute(ctx);
         }
     }

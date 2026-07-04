@@ -43,7 +43,7 @@ public class PhantomOfTaki : SakikoCharacterBaseCard
 	{
 		if (play.Target != null)
 		{
-			AttackCommand command = DamageCmd.Attack(DynamicVars.Damage.BaseValue).FromCard(this)
+			AttackCommand command = DamageCmd.Attack(DynamicVars.Damage.BaseValue).FromCard(this, play)
 				.WithHitCount((int)DynamicVars["AttackTimes"].BaseValue).Targeting(play.Target);
 			await command.Execute(ctx);
 			foreach (var list in command.Results)

@@ -19,7 +19,7 @@ public class CardDeletePower : CustomPowerModel
     public override bool AllowNegative => false;
     protected override bool IsVisibleInternal => false;
 
-    [SavedProperty] private HashSet<CardModel> _cards = new HashSet<CardModel>();
+    private readonly HashSet<CardModel> _cards = [];
 
     public void DeleteCard(CardModel card)
     {

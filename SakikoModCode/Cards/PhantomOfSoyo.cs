@@ -57,7 +57,7 @@ public class PhantomOfSoyo : SakikoCharacterBaseCard
 		if (play.Target != null)
 		{
 			await DamageCmd.Attack(DynamicVars.Damage.BaseValue)
-				.FromCard(this).WithHitCount((int)attackTimes).Targeting(play.Target).Execute(ctx);
+				.FromCard(this, play).WithHitCount((int)attackTimes).Targeting(play.Target).Execute(ctx);
 		}
 
 		CardModel card = base.Owner.Creature.CombatState.CreateCard<Indifference>(base.Owner);
