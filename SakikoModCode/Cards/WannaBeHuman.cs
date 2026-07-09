@@ -15,13 +15,9 @@ public class WannaBeHuman : SakikoCharacterBaseCard
 {
     private readonly List<DynamicVar> _vars = new()
     {
-        new BlockVar(7, ValueProp.Move),
-        new BackwardVar(1)
+        new BlockVar(7, ValueProp.Move)
     };
     protected override IEnumerable<DynamicVar> CanonicalVars => _vars;
-    
-    private readonly HashSet<CardKeyword> _keywords = new() { SakikoModKeywords.BackwardKeyword };
-    public override IEnumerable<CardKeyword> CanonicalKeywords => _keywords;
 
     protected override IEnumerable<IHoverTip> ExtraHoverTips
     {
@@ -38,10 +34,6 @@ public class WannaBeHuman : SakikoCharacterBaseCard
 
     protected override async Task OnPlay(PlayerChoiceContext ctx, CardPlay play)
     {
-        for (int i = 0; i < DynamicVars["Backward"].BaseValue; i++)
-        {
-            await SakikoModCmd.TimeBackward(base.Owner.Creature, ctx);
-        }
         await CreatureCmd.GainBlock(Owner.Creature,
             DynamicVars.Block.BaseValue, ValueProp.Move, play, false);
         await SakikoModCmd.InGameAdd(base.Owner.Creature, ctx, base.Owner.Creature.CombatState.CreateCard<Nihil>(base.Owner),

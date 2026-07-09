@@ -15,8 +15,7 @@ public class ForgetEverything : SakikoCharacterBaseCard
 {
     private readonly List<DynamicVar> _vars = new()
     {
-        new DamageVar(5, ValueProp.Move),
-        new ForwardVar(1)
+        new DamageVar(5, ValueProp.Move)
     };
     protected override IEnumerable<DynamicVar> CanonicalVars => _vars;
 
@@ -35,7 +34,6 @@ public class ForgetEverything : SakikoCharacterBaseCard
 
     protected override async Task OnPlay(PlayerChoiceContext ctx, CardPlay play)
     {
-        await SakikoModCmd.TimeForward(base.Owner.Creature, ctx);
         IEnumerable<CardModel>? cards = PileType.Draw.GetPile(base.Owner).Cards
             .Where((CardModel c) => c.Type is CardType.Curse);
         decimal cardCount = cards.Count();

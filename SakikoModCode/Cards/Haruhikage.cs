@@ -15,36 +15,6 @@ public class Haruhikage : SakikoCharacterBaseCard, ITomeCard
 {
     public override bool CanBeGeneratedInCombat => false;
     public override bool CanBeGeneratedByModifiers => false;
-    
-    private readonly List<DynamicVar> _vars = new()
-    {
-        new DynamicVar("Haruhikage", 5m),
-    };
-    protected override IEnumerable<DynamicVar> CanonicalVars => _vars;
-    
-    private readonly HashSet<CardKeyword> _keywords = new() { CardKeyword.Ethereal };
-    public override IEnumerable<CardKeyword> CanonicalKeywords => _keywords;
-
-    protected override IEnumerable<IHoverTip> ExtraHoverTips
-    {
-        get
-        {
-            yield return HoverTipFactory.FromPower<HaruhikagePower>();
-            yield return HoverTipFactory.FromPower<SakikoLightPower>();
-            yield return HoverTipFactory.FromPower<SakikoDarkPower>();
-        }
-    }
-
-    protected override void OnUpgrade()
-    {
-        RemoveKeyword(CardKeyword.Ethereal);
-    }
-
-    protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
-    {
-        await PowerCmd.Apply<HaruhikagePower>(choiceContext, base.Owner.Creature,
-            amount: base.DynamicVars["Haruhikage"].BaseValue, base.Owner.Creature, this);
-    }
 
     public Haruhikage() : base(3, CardType.Power, CardRarity.Ancient, TargetType.Self) { }
 }

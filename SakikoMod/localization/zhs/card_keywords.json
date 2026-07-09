@@ -12,9 +12,5 @@
 	"SAKIKOMOD-ADDITION.description": "加入你的牌组。",
 	"SAKIKOMOD-ADDITION.title": "添加",
 	"SAKIKOMOD-DELETION.description": "[gold]消耗[/gold]；\n如果它在你的牌组中，就从你的牌组中移除。",
-	"SAKIKOMOD-DELETION.title": "移除",
-	"SAKIKOMOD-FORWARDKEYWORD.description": "将时针向后拨动。",
-	"SAKIKOMOD-FORWARDKEYWORD.title": "顺行",
-	"SAKIKOMOD-BACKWARDKEYWORD.description": "将时针向前拨动。",
-	"SAKIKOMOD-BACKWARDKEYWORD.title": "逆行"
+	"SAKIKOMOD-DELETION.title": "移除"
 }

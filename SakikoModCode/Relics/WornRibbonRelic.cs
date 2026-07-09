@@ -56,9 +56,6 @@ public class WornRibbonRelic : CustomRelicModel
         
         await PowerCmd.Apply<CardDeletePower>(ctx, player.Creature, 1, player.Creature, null, true);
         await PowerCmd.Apply<CardAddPower>(ctx, player.Creature, 1, player.Creature, null, true);
-        
-        await PowerCmd.Apply<CrescentPower>(ctx, player.Creature, 1, player.Creature, null);
-        await PowerCmd.Apply<ForwardPower>(ctx, player.Creature, 1, player.Creature, null);
     }
     
     public override async Task AfterCombatVictory(MegaCrit.Sts2.Core.Rooms.CombatRoom room)
