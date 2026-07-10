@@ -4,6 +4,7 @@ using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
+using MegaCrit.Sts2.Core.Localization;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Powers;
@@ -37,7 +38,8 @@ public class SymbolIFire : SakikoCharacterBaseCard
     protected override async Task OnPlay(PlayerChoiceContext ctx, CardPlay play)
     {
         CardModel? cardModel = (await CardSelectCmd.FromHand(ctx, base.Owner,
-            new CardSelectorPrefs(CardSelectorPrefs.ExhaustSelectionPrompt, 1), null, this)).FirstOrDefault();
+            new CardSelectorPrefs(new LocString("gameplay_ui", "SAKIKOMOD-SELECT_CARD_DELETE"),
+                1), null, this)).FirstOrDefault();
         if (cardModel != null)
         {
             await SakikoModCmd.InGameDelete(base.Owner.Creature, ctx, cardModel);

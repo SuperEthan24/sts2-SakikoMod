@@ -36,7 +36,7 @@ public static class SakikoModCmd
             }
         }
 
-        await CardCmd.Exhaust(ctx, cardModel);
+        await CardCmd.Exhaust(ctx, cardModel, skipVisuals:skipVisuals);
         await CardPileCmd.RemoveFromCombat(cardModel, skipVisuals);
     }
     public static async Task InGameDelete(Creature creature, PlayerChoiceContext ctx, IEnumerable<CardModel> cardModels,
@@ -67,7 +67,7 @@ public static class SakikoModCmd
                 }
             }
 
-            await CardCmd.Exhaust(ctx, c);
+            await CardCmd.Exhaust(ctx, c, skipVisuals:skipVisuals);
             await CardPileCmd.RemoveFromCombat(c, skipVisuals);
         }
     }
@@ -86,7 +86,7 @@ public static class SakikoModCmd
             if (skipVisuals)
             {
                 await CardPileCmd.Add(cardModel, pileType,
-                    (pileType == PileType.Draw ? CardPilePosition.Random : CardPilePosition.Bottom), null, true);
+                    (pileType == PileType.Draw ? CardPilePosition.Random : CardPilePosition.Bottom), skipVisuals:true);
             }
             else
             {

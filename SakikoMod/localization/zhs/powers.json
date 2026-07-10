@@ -17,6 +17,9 @@
 	"SAKIKOMOD-INDIFFERENCE_POWER.description": "下回合开始时少抽牌。",
 	"SAKIKOMOD-INDIFFERENCE_POWER.smartDescription": "下回合开始时，少抽{Amount}张牌。",
 	"SAKIKOMOD-INDIFFERENCE_POWER.title": "冷漠",
+	"SAKIKOMOD-HARUHIKAGE_POWER.description": "在非额外回合开始时，获得额外回合。",
+	"SAKIKOMOD-HARUHIKAGE_POWER.smartDescription": "在非额外回合开始时，获得{Amount}个额外回合。",
+	"SAKIKOMOD-HARUHIKAGE_POWER.title": "春日影",
 	"SAKIKOMOD-EXTRA_TURN_POWER.description": "获得额外回合。",
 	"SAKIKOMOD-EXTRA_TURN_POWER.smartDescription": "获得{Amount}个额外回合。",
 	"SAKIKOMOD-EXTRA_TURN_POWER.title": "神明造物"
