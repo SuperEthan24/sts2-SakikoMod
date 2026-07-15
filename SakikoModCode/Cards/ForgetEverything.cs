@@ -15,7 +15,7 @@ public class ForgetEverything : SakikoCharacterBaseCard
 {
     private readonly List<DynamicVar> _vars = new()
     {
-        new DamageVar(5, ValueProp.Move)
+        new DamageVar(8, ValueProp.Move)
     };
     protected override IEnumerable<DynamicVar> CanonicalVars => _vars;
 
@@ -23,13 +23,13 @@ public class ForgetEverything : SakikoCharacterBaseCard
     {
         get
         {
-            yield return HoverTipFactory.FromKeyword(SakikoModKeywords.Deletion);
+            yield return HoverTipFactory.FromKeyword(CardKeyword.Exhaust);
         }
     }
 
     protected override void OnUpgrade()
     {
-        DynamicVars.Damage.UpgradeValueBy(3);
+        DynamicVars.Damage.UpgradeValueBy(4);
     }
 
     protected override async Task OnPlay(PlayerChoiceContext ctx, CardPlay play)
@@ -37,7 +37,10 @@ public class ForgetEverything : SakikoCharacterBaseCard
         IEnumerable<CardModel>? cards = PileType.Draw.GetPile(base.Owner).Cards
             .Where((CardModel c) => c.Type is CardType.Curse);
         decimal cardCount = cards.Count();
-        await SakikoModCmd.InGameDelete(base.Owner.Creature, ctx, cards);
+        foreach (var card in cards)
+        {
+            await CardCmd.Exhaust(ctx, card);
+        }
         if (play.Target != null)
         {
             await DamageCmd.Attack(DynamicVars.Damage.BaseValue).FromCard(this, play).WithHitCount((int)cardCount + 1)

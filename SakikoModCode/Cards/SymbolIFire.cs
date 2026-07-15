@@ -37,7 +37,7 @@ public class SymbolIFire : SakikoCharacterBaseCard
 
     protected override async Task OnPlay(PlayerChoiceContext ctx, CardPlay play)
     {
-        CardModel? cardModel = (await CardSelectCmd.FromHand(ctx, base.Owner,
+        CardModel? cardModel = (await SakikoModCmd.CardSelectFromHandForDelete(ctx, base.Owner,
             new CardSelectorPrefs(new LocString("gameplay_ui", "SAKIKOMOD-SELECT_CARD_DELETE"),
                 1), null, this)).FirstOrDefault();
         if (cardModel != null)

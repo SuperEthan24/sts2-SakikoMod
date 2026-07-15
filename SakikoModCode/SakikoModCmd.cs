@@ -1,6 +1,8 @@
+using MegaCrit.Sts2.Core.CardSelection;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Creatures;
+using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Models;
 using SakikoMod.SakikoModCode.Character;
@@ -13,31 +15,7 @@ public static class SakikoModCmd
     public static async Task InGameDelete(Creature creature, PlayerChoiceContext ctx, CardModel cardModel,
         bool skipVisuals = false)
     {
-        if (!creature.HasPower<CardAddPower>())
-        {
-            await PowerCmd.Apply<CardAddPower>(ctx, creature, 1, creature, null);
-        }
-        if (!creature.HasPower<CardDeletePower>())
-        {
-            await PowerCmd.Apply<CardDeletePower>(ctx, creature, 1, creature, null);
-        }
-
-        CardCmd.ApplyKeyword(cardModel, SakikoModKeywords.ToBeDeleted);
-        if (!cardModel.Keywords.Contains(CardKeyword.Eternal))
-        {
-            if (cardModel.Keywords.Contains(SakikoModKeywords.ToBeAdded))
-            {
-                CardCmd.RemoveKeyword(cardModel, SakikoModKeywords.ToBeAdded);
-                creature.GetPower<CardAddPower>().DeleteCard(cardModel);
-            }
-            else if (cardModel.DeckVersion != null)
-            {
-                creature.GetPower<CardDeletePower>().DeleteCard(cardModel);
-            }
-        }
-
-        await CardCmd.Exhaust(ctx, cardModel, skipVisuals:skipVisuals);
-        await CardPileCmd.RemoveFromCombat(cardModel, skipVisuals);
+        await InGameDelete(creature, ctx, [cardModel], skipVisuals);
     }
     public static async Task InGameDelete(Creature creature, PlayerChoiceContext ctx, IEnumerable<CardModel> cardModels,
         bool skipVisuals = false)
@@ -64,6 +42,11 @@ public static class SakikoModCmd
                 else if (c.DeckVersion != null)
                 {
                     creature.GetPower<CardDeletePower>().DeleteCard(c);
+                }
+
+                if (c is SakikoCharacterBaseCard { HasOnDeletionEffect: true } s)
+                {
+                    await s.OnDeletion(ctx);
                 }
             }
 
@@ -99,5 +82,12 @@ public static class SakikoModCmd
         {
             await Cmd.Wait(0.01f);
         }
+    }
+
+    public static async Task<IEnumerable<CardModel>> CardSelectFromHandForDelete(PlayerChoiceContext ctx, Player player,
+        CardSelectorPrefs prefs, Func<CardModel, bool>? filter, AbstractModel source)
+    {
+        prefs.ShouldGlowGold = (CardModel c) => c is SakikoCharacterBaseCard { HasOnDeletionEffect: true };
+        return await CardSelectCmd.FromHand(ctx, player, prefs, filter, source);
     }
 }

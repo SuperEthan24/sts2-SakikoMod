@@ -24,6 +24,7 @@ public class AwakeningOfCrescent : SakikoCharacterBaseCard
 
 	protected override void OnUpgrade()
 	{
+		DynamicVars.Damage.UpgradeValueBy(2);
 		DynamicVars.Repeat.UpgradeValueBy(1);
 	}
 

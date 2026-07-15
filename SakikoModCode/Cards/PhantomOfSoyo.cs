@@ -34,7 +34,12 @@ public class PhantomOfSoyo : SakikoCharacterBaseCard
 			yield return HoverTipFactory.FromCard<Indifference>();
 		}
 	}
-	
+
+	protected override void OnUpgrade()
+	{
+		DynamicVars.Damage.UpgradeValueBy(4);
+	}
+
 	protected override async Task OnPlay(PlayerChoiceContext ctx, CardPlay play)
 	{
 		decimal attackTimes = DynamicVars["AttackTimes"].BaseValue;

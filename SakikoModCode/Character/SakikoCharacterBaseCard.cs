@@ -3,9 +3,11 @@ using System.Threading.Tasks;
 using BaseLib.Abstracts;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
+using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Localization;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
+using MegaCrit.Sts2.Core.Models.Events;
 
 namespace SakikoMod.SakikoModCode.Character;
 
@@ -55,4 +57,11 @@ public abstract class SakikoCharacterBaseCard : CustomCardModel
     /// </summary>
     protected Task PlayCast()
         => CreatureCmd.TriggerAnim(Owner.Creature, "Cast", Owner.Character.CastAnimDelay);
+
+    public virtual bool HasOnDeletionEffect => false;
+
+    public virtual Task OnDeletion(PlayerChoiceContext ctx)
+    {
+        return Task.CompletedTask;
+    }
 }

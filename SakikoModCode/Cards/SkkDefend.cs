@@ -4,6 +4,7 @@ using BaseLib.Abstracts;
 using BaseLib.Utils;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
+using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization;
@@ -25,6 +26,7 @@ public class SkkDefend : SakikoCharacterBaseCard
     private readonly List<DynamicVar> _vars = new()
     {
         new BlockVar(5, ValueProp.Move),                    // Block
+        new BlockVar("ExtraBlock", 3, ValueProp.Move)
     };
     protected override IEnumerable<DynamicVar> CanonicalVars => _vars;
 
@@ -41,6 +43,11 @@ public class SkkDefend : SakikoCharacterBaseCard
         await CreatureCmd.GainBlock(Owner.Creature,
             DynamicVars.Block.BaseValue, ValueProp.Move, play, false);
     }
-    
+
+    public override async Task AfterShuffle(PlayerChoiceContext choiceContext, Player shuffler)
+    {
+        DynamicVars.Block.BaseValue += DynamicVars["ExtraBlock"].BaseValue;
+    }
+
     public SkkDefend() : base(1, CardType.Skill, CardRarity.Basic, TargetType.None) { }
 }
