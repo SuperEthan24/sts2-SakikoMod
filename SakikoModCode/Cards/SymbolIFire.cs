@@ -9,6 +9,7 @@ using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Powers;
 using SakikoMod.SakikoModCode.Character;
+using SakikoMod.SakikoModCode.Powers;
 
 namespace SakikoMod.SakikoModCode.Cards;
 
@@ -17,20 +18,20 @@ public class SymbolIFire : SakikoCharacterBaseCard
 {
     private readonly List<DynamicVar> _vars = new()
     {
-        new PowerVar<RitualPower>(3)
+        new PowerVar<ExtraTurnPower>(1)
     };
     protected override IEnumerable<DynamicVar> CanonicalVars => _vars;
     
     protected override void OnUpgrade()
     {
-        DynamicVars["RitualPower"].UpgradeValueBy(1);
+        EnergyCost.UpgradeBy(-1);
     }
 
     protected override IEnumerable<IHoverTip> ExtraHoverTips
     {
         get
         {
-            yield return HoverTipFactory.FromPower<RitualPower>();
+            yield return HoverTipFactory.FromPower<ExtraTurnPower>();
             yield return HoverTipFactory.FromKeyword(SakikoModKeywords.Deletion);
         }
     }
@@ -43,10 +44,10 @@ public class SymbolIFire : SakikoCharacterBaseCard
         if (cardModel != null)
         {
             await SakikoModCmd.InGameDelete(base.Owner.Creature, ctx, cardModel);
-            await PowerCmd.Apply<RitualPower>(ctx, base.Owner.Creature, DynamicVars["RitualPower"].BaseValue,
+            await PowerCmd.Apply<ExtraTurnPower>(ctx, base.Owner.Creature, DynamicVars["ExtraTurnPower"].BaseValue,
                 base.Owner.Creature, this);
         }
     }
 
-    public SymbolIFire() : base(0, CardType.Skill, CardRarity.Rare, TargetType.None) { }
+    public SymbolIFire() : base(2, CardType.Skill, CardRarity.Uncommon, TargetType.None) { }
 }

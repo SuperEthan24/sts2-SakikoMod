@@ -43,7 +43,7 @@ public class Shiny : SakikoCharacterBaseCard
                 .FromCard(this, play).Targeting(play.Target).Execute(ctx);
         }
 
-        if (base.Owner.PlayerCombatState.Energy + base.EnergyCost.GetAmountToSpend() <= base.DynamicVars["Limit"].IntValue)
+        if (base.Owner.PlayerCombatState?.Energy + base.EnergyCost.GetAmountToSpend() <= base.DynamicVars["Limit"].IntValue)
         {
             await PlayerCmd.GainEnergy((int)base.DynamicVars.Energy.BaseValue, base.Owner);
         }
