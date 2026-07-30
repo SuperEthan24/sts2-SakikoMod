@@ -44,9 +44,10 @@ public class SkkDefend : SakikoCharacterBaseCard
             DynamicVars.Block.BaseValue, ValueProp.Move, play, false);
     }
 
-    public override async Task AfterShuffle(PlayerChoiceContext choiceContext, Player shuffler)
+    public override Task AfterShuffle(PlayerChoiceContext choiceContext, Player shuffler)
     {
         DynamicVars.Block.BaseValue += DynamicVars["ExtraBlock"].BaseValue;
+        return Task.CompletedTask;
     }
 
     public SkkDefend() : base(1, CardType.Skill, CardRarity.Basic, TargetType.None) { }

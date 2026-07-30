@@ -22,5 +22,8 @@
 	"SAKIKOMOD-HARUHIKAGE_POWER.title": "春日影",
 	"SAKIKOMOD-EXTRA_TURN_POWER.description": "获得额外回合。",
 	"SAKIKOMOD-EXTRA_TURN_POWER.smartDescription": "获得{Amount}个额外回合。",
-	"SAKIKOMOD-EXTRA_TURN_POWER.title": "神明造物"
+	"SAKIKOMOD-EXTRA_TURN_POWER.title": "神明造物",
+	"SAKIKOMOD-MASKED_POWER.description": "若本回合未打出[gold]技能[/gold]，受到攻击伤害减少。",
+	"SAKIKOMOD-MASKED_POWER.smartDescription": "若本回合未打出[gold]技能[/gold]，所受攻击伤害减少{Amount}%。",
+	"SAKIKOMOD-MASKED_POWER.title": "假面"
 }

@@ -39,6 +39,8 @@
 	"SAKIKOMOD-ENERGY_DRINK.title": "能量饮料",
 	"SAKIKOMOD-BOX_LUNCH.description": "回合结束时恢复{Heal:diff()}点生命。",
 	"SAKIKOMOD-BOX_LUNCH.title": "盒装午餐",
+	"SAKIKOMOD-MASKED.description": "若你本回合没有打出过[gold]技能[/gold]，则受到的攻击伤害减少{MaskedPower:diff()}%。",
+	"SAKIKOMOD-MASKED.title": "假面",
 	"SAKIKOMOD-PHANTOM_OF_MUSTUMI.description": "抽{Cards:diff()}张牌。\n将一张[gold]傲慢[/gold]放入弃牌堆和牌组。",
 	"SAKIKOMOD-PHANTOM_OF_MUSTUMI.title": "睦的幻影",
 	"SAKIKOMOD-SYMBOL_I_FIRE.description": "选择手中的一张牌[gold]移除[/gold]。\n获得{ExtraTurnPower:diff()}个额外回合。",
