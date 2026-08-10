@@ -55,6 +55,8 @@
 	"SAKIKOMOD-IMPRISONED_XII.title": "徒囚 XII",
 	"SAKIKOMOD-ETIQUETTE.description": "将一张[gold]ですわ[/gold]放入抽牌堆和牌组。",
 	"SAKIKOMOD-ETIQUETTE.title": "礼仪",
+	"SAKIKOMOD-CRYCHIC.description": "回合开始时，丢弃任意张[gold]诅咒[/gold]。\n获得(10-丢弃数)*{CrychicPower:diff()}层[gold]活力[/gold]。",
+	"SAKIKOMOD-CRYCHIC.title": "Crychic",
 	"SAKIKOMOD-RELAX.description": "抽到时，获得{Energy:energyIcons()}。",
 	"SAKIKOMOD-RELAX.title": "放松",
 	"SAKIKOMOD-POTION_CARDS.description": "[gold]{PotionName}[/gold]\n{PotionDescription}",

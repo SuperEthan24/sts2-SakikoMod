@@ -25,5 +25,9 @@
 	"SAKIKOMOD-EXTRA_TURN_POWER.title": "神明造物",
 	"SAKIKOMOD-MASKED_POWER.description": "若本回合未打出[gold]技能[/gold]，受到攻击伤害减少。",
 	"SAKIKOMOD-MASKED_POWER.smartDescription": "若本回合未打出[gold]技能[/gold]，所受攻击伤害减少{Amount}%。",
-	"SAKIKOMOD-MASKED_POWER.title": "假面"
+	"SAKIKOMOD-MASKED_POWER.title": "假面",
+	"SAKIKOMOD-CRYCHIC_POWER.description": "回合开始时，丢弃任意张[gold]诅咒[/gold]。\n获得与丢弃数相关的[gold]活力[/gold]。",
+	"SAKIKOMOD-CRYCHIC_POWER.smartDescription": "回合开始时，丢弃任意张[gold]诅咒[/gold]。\n获得(10-丢弃数)*{Amount}层[gold]活力[/gold]。",
+	"SAKIKOMOD-CRYCHIC_POWER.title": "Crychic",
+	"SAKIKOMOD-CRYCHIC_POWER.selectionScreenPrompt": "选择任意张[gold]诅咒[/gold]进行丢弃。"
 }
