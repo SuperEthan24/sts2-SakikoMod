@@ -29,5 +29,8 @@
 	"SAKIKOMOD-CRYCHIC_POWER.description": "回合开始时，丢弃任意张[gold]诅咒[/gold]。\n获得与丢弃数相关的[gold]活力[/gold]。",
 	"SAKIKOMOD-CRYCHIC_POWER.smartDescription": "回合开始时，丢弃任意张[gold]诅咒[/gold]。\n获得(10-丢弃数)*{Amount}层[gold]活力[/gold]。",
 	"SAKIKOMOD-CRYCHIC_POWER.title": "Crychic",
-	"SAKIKOMOD-CRYCHIC_POWER.selectionScreenPrompt": "选择任意张[gold]诅咒[/gold]进行丢弃。"
+	"SAKIKOMOD-CRYCHIC_POWER.selectionScreenPrompt": "选择任意张[gold]诅咒[/gold]进行丢弃。",
+	"SAKIKOMOD-PERPETUAL_CYCLE_POWER.description": "若上回合未受到超过10点的体力伤害，则本回合结束时格挡不再消失。",
+	"SAKIKOMOD-PERPETUAL_CYCLE_POWER.smartDescription": "若上回合未受到超过10点的体力伤害，则本回合结束时格挡不再消失。",
+	"SAKIKOMOD-PERPETUAL_CYCLE_POWER.title": "循迴永动"
 }

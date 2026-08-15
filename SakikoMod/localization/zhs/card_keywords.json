@@ -12,5 +12,9 @@
 	"SAKIKOMOD-ADDITION.description": "加入你的牌组。",
 	"SAKIKOMOD-ADDITION.title": "添加",
 	"SAKIKOMOD-DELETION.description": "[gold]消耗[/gold]；\n如果它在你的牌组中，就从你的牌组中移除。",
-	"SAKIKOMOD-DELETION.title": "移除"
+	"SAKIKOMOD-DELETION.title": "移除",
+	"SAKIKOMOD-CONTINGENCY.description": "[gold]消耗[/gold]；\n下回合开始时，回到抽牌堆。",
+	"SAKIKOMOD-CONTINGENCY.title": "权变",
+	"SAKIKOMOD-INCONTINGENCY.description": "这张牌下回合开始时会回到抽牌堆。",
+	"SAKIKOMOD-INCONTINGENCY.title": "权变 生效中"
 }

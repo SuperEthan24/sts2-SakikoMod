@@ -1,13 +1,11 @@
-using System.Reflection;
-using System.Threading.Tasks;
 using BaseLib.Abstracts;
+using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
+using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Localization;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
-using MegaCrit.Sts2.Core.Models;
-using MegaCrit.Sts2.Core.Models.Events;
 
 namespace SakikoMod.SakikoModCode.Character;
 
@@ -63,5 +61,26 @@ public abstract class SakikoCharacterBaseCard : CustomCardModel
     public virtual Task OnDeletion(PlayerChoiceContext ctx)
     {
         return Task.CompletedTask;
+    }
+
+    public override async Task AfterCardPlayedLate(PlayerChoiceContext ctx, CardPlay play)
+    {
+        if (play.Card != this) return;
+        if (this.Keywords.Contains(SakikoModKeywords.Contingency))
+        {
+            CardCmd.ApplyKeyword(this, SakikoModKeywords.InContingency);
+            await CardCmd.Exhaust(ctx, this);
+        }
+    }
+
+    public override async Task AfterSideTurnEndLate(PlayerChoiceContext ctx, CombatSide side, IEnumerable<Creature> participants)
+    {
+        if (side != base.Owner.Creature.Side) return;
+        if (this.Keywords.Contains(SakikoModKeywords.Contingency) &&
+            this.Keywords.Contains(SakikoModKeywords.InContingency) && this.Pile is { Type: PileType.Exhaust })
+        {
+            CardCmd.RemoveKeyword(this, SakikoModKeywords.InContingency);
+            CardCmd.PreviewCardPileAdd(await CardPileCmd.Add(this, PileType.Draw, CardPilePosition.Random));
+        }
     }
 }
