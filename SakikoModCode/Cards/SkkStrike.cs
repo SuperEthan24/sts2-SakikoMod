@@ -61,9 +61,10 @@ public class SkkStrike : SakikoCharacterBaseCard
         }
     }
 
-    public override async Task OnDeletion(PlayerChoiceContext ctx)
+    public override async Task<bool> OnDeletion(PlayerChoiceContext ctx)
     {
         await PowerCmd.Apply<VigorPower>(ctx, base.Owner.Creature, DynamicVars.Power<VigorPower>().BaseValue,
             base.Owner.Creature, this);
+        return false;
     }
 }

@@ -59,8 +59,9 @@ public abstract class SakikoCharacterBaseCard : CustomCardModel
 
     public virtual bool HasOnDeletionEffect => false;
 
-    public virtual Task OnDeletion(PlayerChoiceContext ctx)
+    public virtual async Task<bool> OnDeletion(PlayerChoiceContext ctx)
     {
-        return Task.CompletedTask;
+        await Cmd.Wait(0.01f);
+        return false;
     }
 }

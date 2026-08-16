@@ -31,6 +31,13 @@ public static class SakikoModCmd
 
         foreach (var c in cardModels.ToList())
         {
+            if (c is SakikoCharacterBaseCard { HasOnDeletionEffect: true } s)
+            {
+                if (await s.OnDeletion(ctx))
+                {
+                    continue;
+                }
+            }
             CardCmd.ApplyKeyword(c, SakikoModKeywords.ToBeDeleted);
             if (!c.Keywords.Contains(CardKeyword.Eternal))
             {
@@ -42,11 +49,6 @@ public static class SakikoModCmd
                 else if (c.DeckVersion != null)
                 {
                     creature.GetPower<CardDeletePower>().DeleteCard(c);
-                }
-
-                if (c is SakikoCharacterBaseCard { HasOnDeletionEffect: true } s)
-                {
-                    await s.OnDeletion(ctx);
                 }
             }
 

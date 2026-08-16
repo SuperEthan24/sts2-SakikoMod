@@ -1,3 +1,4 @@
+using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization;
 
 namespace SakikoMod.SakikoModCode.Cards;
@@ -17,10 +18,12 @@ public class Nihil : SakikoCharacterBaseCard
 {
     public override bool CanBeGeneratedInCombat => false;
     public override bool CanBeGeneratedByModifiers => false;
-    
+    public override bool HasOnDeletionEffect => true;
+
     private readonly List<DynamicVar> _vars = new()
     {
         new DamageVar(10, ValueProp.Move),
+        new ExtraDamageVar(6)
     };
     protected override IEnumerable<DynamicVar> CanonicalVars => _vars;
     
@@ -33,9 +36,18 @@ public class Nihil : SakikoCharacterBaseCard
     private readonly HashSet<SakikoCardTag> _sakikoTags = new() { SakikoCardTag.Mang };
     protected override HashSet<SakikoCardTag> CanonicalSakikoTags => _sakikoTags;
 
+    protected override IEnumerable<IHoverTip> ExtraHoverTips
+    {
+        get
+        {
+            yield return HoverTipFactory.FromKeyword(SakikoModKeywords.Deletion);
+        }
+    }
+
     protected override void OnUpgrade()
     {
         DynamicVars.Damage.UpgradeValueBy(4);               // 10 → 14
+        DynamicVars.ExtraDamage.UpgradeValueBy(3);
     }
     
     protected override async Task OnPlay(PlayerChoiceContext ctx, CardPlay play)
@@ -46,6 +58,12 @@ public class Nihil : SakikoCharacterBaseCard
                 .FromCard(this, play).Targeting(play.Target).Execute(ctx);
         }
     }
-    
+
+    public override async Task<bool> OnDeletion(PlayerChoiceContext ctx)
+    {
+        DynamicVars.Damage.BaseValue += DynamicVars.ExtraDamage.BaseValue;
+        return true;
+    }
+
     public Nihil() : base(1, CardType.Attack, CardRarity.Common, TargetType.AnyEnemy) { }
 }
