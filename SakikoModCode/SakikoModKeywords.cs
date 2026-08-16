@@ -34,7 +34,7 @@ public static class SakikoModKeywords
     public static CardKeyword AsDefend = CardKeyword.None;
     
     [CustomEnum]
-    [KeywordProperties(AutoKeywordPosition.None, true)]
+    [KeywordProperties(AutoKeywordPosition.Before, true)]
     public static CardKeyword Contingency = CardKeyword.None;
     [CustomEnum]
     [KeywordProperties(AutoKeywordPosition.None, true)]

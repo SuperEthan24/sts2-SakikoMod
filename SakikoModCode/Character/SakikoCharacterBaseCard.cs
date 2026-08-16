@@ -6,6 +6,7 @@ using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Localization;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
+using MegaCrit.Sts2.Core.Nodes.CommonUi;
 
 namespace SakikoMod.SakikoModCode.Character;
 
@@ -80,7 +81,9 @@ public abstract class SakikoCharacterBaseCard : CustomCardModel
             this.Keywords.Contains(SakikoModKeywords.InContingency) && this.Pile is { Type: PileType.Exhaust })
         {
             CardCmd.RemoveKeyword(this, SakikoModKeywords.InContingency);
-            CardCmd.PreviewCardPileAdd(await CardPileCmd.Add(this, PileType.Draw, CardPilePosition.Random));
+            CardCmd.PreviewCardPileAdd(
+                await CardPileCmd.Add(this, PileType.Draw, CardPilePosition.Random, skipVisuals: true),
+                style: CardPreviewStyle.MessyLayout);
         }
     }
 }
