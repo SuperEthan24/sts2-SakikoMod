@@ -32,11 +32,4 @@ public static class SakikoModKeywords
     [CustomEnum]
     [KeywordProperties(AutoKeywordPosition.None, true)]
     public static CardKeyword AsDefend = CardKeyword.None;
-    
-    [CustomEnum]
-    [KeywordProperties(AutoKeywordPosition.Before, true)]
-    public static CardKeyword Contingency = CardKeyword.None;
-    [CustomEnum]
-    [KeywordProperties(AutoKeywordPosition.None, true)]
-    public static CardKeyword InContingency = CardKeyword.None;
 }

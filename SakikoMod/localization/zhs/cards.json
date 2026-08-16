@@ -47,7 +47,7 @@
 	"SAKIKOMOD-PHANTOM_OF_MUSTUMI.title": "睦的幻影",
 	"SAKIKOMOD-SYMBOL_I_FIRE.description": "选择手中的一张牌[gold]移除[/gold]。\n获得{ExtraTurnPower:diff()}个额外回合。",
 	"SAKIKOMOD-SYMBOL_I_FIRE.title": "第一元素：火",
-	"SAKIKOMOD-IMPROMPTU.description": "获得{Energy:energyIcons()}，抽{Cards:diff()}张牌。",
+	"SAKIKOMOD-IMPROMPTU.description": "获得{Energy:energyIcons()}，抽{Cards:diff()}张牌。\n下回合开始时，无论何处，回到抽牌堆。",
 	"SAKIKOMOD-IMPROMPTU.title": "即兴",
 	"SAKIKOMOD-OVERTURE.description": "将{energyPrefix:energyIcons(1)}补充至{Energy:diff()}{energyPrefix:energyIcons(1)}。\n抽牌直到手牌数为{Cards:diff()}。",
 	"SAKIKOMOD-OVERTURE.title": "开幕",

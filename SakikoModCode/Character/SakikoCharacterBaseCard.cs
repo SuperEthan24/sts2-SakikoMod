@@ -63,27 +63,4 @@ public abstract class SakikoCharacterBaseCard : CustomCardModel
     {
         return Task.CompletedTask;
     }
-
-    public override async Task AfterCardPlayedLate(PlayerChoiceContext ctx, CardPlay play)
-    {
-        if (play.Card != this) return;
-        if (this.Keywords.Contains(SakikoModKeywords.Contingency))
-        {
-            CardCmd.ApplyKeyword(this, SakikoModKeywords.InContingency);
-            await CardCmd.Exhaust(ctx, this);
-        }
-    }
-
-    public override async Task AfterSideTurnEndLate(PlayerChoiceContext ctx, CombatSide side, IEnumerable<Creature> participants)
-    {
-        if (side != base.Owner.Creature.Side) return;
-        if (this.Keywords.Contains(SakikoModKeywords.Contingency) &&
-            this.Keywords.Contains(SakikoModKeywords.InContingency) && this.Pile is { Type: PileType.Exhaust })
-        {
-            CardCmd.RemoveKeyword(this, SakikoModKeywords.InContingency);
-            CardCmd.PreviewCardPileAdd(
-                await CardPileCmd.Add(this, PileType.Draw, CardPilePosition.Random, skipVisuals: true),
-                style: CardPreviewStyle.MessyLayout);
-        }
-    }
 }
