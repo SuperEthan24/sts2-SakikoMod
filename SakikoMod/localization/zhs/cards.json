@@ -33,6 +33,8 @@
 	"SAKIKOMOD-PHANTOM_OF_TOMORI.title": "灯的幻影",
 	"SAKIKOMOD-AWAKENING_OF_CRESCENT.description": "造成{Damage:diff()}点伤害。\n若此时处于[gold]额外回合[/gold]，额外造成{Repeat:diff()}次伤害。",
 	"SAKIKOMOD-AWAKENING_OF_CRESCENT.title": "新月的苏醒",
+	"SAKIKOMOD-CHOIR_S_CHOIR.description": "消耗{GoldCost:diff()}金币。\n下{BlockRetainPower:diff()}个回合开始时[gold]格挡[/gold]不再消失。",
+	"SAKIKOMOD-CHOIR_S_CHOIR.title": "堕颂",
 	"SAKIKOMOD-PARREL_PROCESSING.description": "造成{Damage:diff()}点伤害。\n若此时拥有[gold]神明造物[/gold]，获得{Block:diff()}点[gold]格挡[/gold]。",
 	"SAKIKOMOD-PARREL_PROCESSING.title": "并行处理",
 	"SAKIKOMOD-SHINY.description": "造成{Damage:diff()}点伤害。\n若拥有{Limit:diff()}点能量或更少，获得{Energy:energyIcons()}。",
