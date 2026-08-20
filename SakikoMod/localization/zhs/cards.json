@@ -67,6 +67,8 @@
 	"SAKIKOMOD-CRYCHIC.title": "Crychic",
 	"SAKIKOMOD-PERPETUAL_CYCLE.description": "若上回合未受到超过10点的体力伤害，则本回合结束时格挡不再消失。",
 	"SAKIKOMOD-PERPETUAL_CYCLE.title": "循迴永动",
+	"SAKIKOMOD-MUSICA_OF_CELESTIAL_SPHERE.description": "仅在其他手牌都不可打出时可打出。\n对所有单位造成{Damage:diff()}点伤害{Repeat:diff()}次。",
+	"SAKIKOMOD-MUSICA_OF_CELESTIAL_SPHERE.title": "天球的乐章",
 	"SAKIKOMOD-RELAX.description": "抽到时，获得{Energy:energyIcons()}。",
 	"SAKIKOMOD-RELAX.title": "放松",
 	"SAKIKOMOD-POTION_CARDS.description": "[gold]{PotionName}[/gold]\n{PotionDescription}",
