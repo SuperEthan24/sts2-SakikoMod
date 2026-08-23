@@ -69,6 +69,8 @@
 	"SAKIKOMOD-PERPETUAL_CYCLE.title": "循迴永动",
 	"SAKIKOMOD-MUSICA_OF_CELESTIAL_SPHERE.description": "仅在其他手牌都不可打出时可打出。\n对所有单位造成{Damage:diff()}点伤害{Repeat:diff()}次。",
 	"SAKIKOMOD-MUSICA_OF_CELESTIAL_SPHERE.title": "天球的乐章",
+	"SAKIKOMOD-DARKNESS_OF_TOGAWA.description": "回合开始时，将剩余的每点[gold]格挡[/gold]转换为{DarknessOfTogawaPower:diff()}金币。",
+	"SAKIKOMOD-DARKNESS_OF_TOGAWA.title": "丰川的黑暗",
 	"SAKIKOMOD-RELAX.description": "抽到时，获得{Energy:energyIcons()}。",
 	"SAKIKOMOD-RELAX.title": "放松",
 	"SAKIKOMOD-POTION_CARDS.description": "[gold]{PotionName}[/gold]\n{PotionDescription}",

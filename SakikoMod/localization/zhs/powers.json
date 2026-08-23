@@ -35,5 +35,8 @@
 	"SAKIKOMOD-PERPETUAL_CYCLE_POWER.title": "循迴永动",
 	"SAKIKOMOD-BLOCK_RETAIN_POWER.description": "下{Amount}个回合开始时，[gold]格挡[/gold]不再消失。",
 	"SAKIKOMOD-BLOCK_RETAIN_POWER.smartDescription": "下回合开始时[gold]格挡[/gold]不再消失。",
-	"SAKIKOMOD-BLOCK_RETAIN_POWER.title": "格挡保留"
+	"SAKIKOMOD-BLOCK_RETAIN_POWER.title": "格挡保留",
+	"SAKIKOMOD-DARKNESS_OF_TOGAWA_POWER.description": "回合开始时，将剩余的每点[gold]格挡[/gold]转换为金币。",
+	"SAKIKOMOD-DARKNESS_OF_TOGAWA_POWER.smartDescription": "回合开始时，将剩余的每点[gold]格挡[/gold]转换为{Amount}金币。",
+	"SAKIKOMOD-DARKNESS_OF_TOGAWA_POWER.title": "丰川的黑暗"
 }
