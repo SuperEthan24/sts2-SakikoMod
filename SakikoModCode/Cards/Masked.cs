@@ -15,13 +15,13 @@ public class Masked : SakikoCharacterBaseCard
 {
 	private readonly List<DynamicVar> _vars = new()
 	{
-		new PowerVar<MaskedPower>(20)
+		new PowerVar<MaskedPower>(3)
 	};
 	protected override IEnumerable<DynamicVar> CanonicalVars => _vars;
 
 	protected override void OnUpgrade()
 	{
-		DynamicVars.Power<MaskedPower>().UpgradeValueBy(10);
+		CardCmd.ApplyKeyword(this, CardKeyword.Innate);
 	}
 
 	protected override IEnumerable<IHoverTip> ExtraHoverTips
