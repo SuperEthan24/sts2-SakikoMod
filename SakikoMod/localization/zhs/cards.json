@@ -39,7 +39,7 @@
 	"SAKIKOMOD-PARREL_PROCESSING.title": "并行处理",
 	"SAKIKOMOD-SHINY.description": "造成{Damage:diff()}点伤害。\n若拥有{Limit:diff()}点能量或更少，获得{Energy:energyIcons()}。",
 	"SAKIKOMOD-SHINY.title": "闪烁",
-	"SAKIKOMOD-EXPERIMENTAL_PROTOTYPE_TRANSPORT.description": "造成{Damage:diff()}点伤害。\n如果拥有不低于{Block:diff()}点[gold]格挡[/gold]，则失去一半[gold]格挡[/gold]，额外造成3次伤害。",
+	"SAKIKOMOD-EXPERIMENTAL_PROTOTYPE_TRANSPORT.description": "造成{Damage:diff()}点伤害。\n如果拥有不低于{Block:diff()}点[gold]格挡[/gold]，则对自身造成{SelfDamage:diff()}点伤害，额外造成{Repeat:diff()}次伤害。",
 	"SAKIKOMOD-EXPERIMENTAL_PROTOTYPE_TRANSPORT.title": "实验元件押运",
 	"SAKIKOMOD-ENERGY_DRINK.description": "消耗{GoldCost:diff()}金币以获得{Energy:energyIcons()}.",
 	"SAKIKOMOD-ENERGY_DRINK.title": "能量饮料",

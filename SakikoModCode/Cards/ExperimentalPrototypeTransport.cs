@@ -17,6 +17,8 @@ public class ExperimentalPrototypeTransport : SakikoCharacterBaseCard
 	{
 		new DamageVar(10, ValueProp.Move),
 		new BlockVar(10, ValueProp.Unpowered),
+		new DamageVar("SelfDamage", 8, ValueProp.Unpowered),
+		new RepeatVar(3)
 	};
 	protected override IEnumerable<DynamicVar> CanonicalVars => _vars;
 
@@ -31,8 +33,9 @@ public class ExperimentalPrototypeTransport : SakikoCharacterBaseCard
 		int attackTimes = 1;
 		if (base.Owner.Creature.Block >= DynamicVars.Block.IntValue)
 		{
-			attackTimes = 4;
-			await CreatureCmd.LoseBlock(ctx, base.Owner.Creature, base.Owner.Creature.Block / 2, base.Owner.Creature);
+			attackTimes += DynamicVars.Repeat.IntValue;
+			await DamageCmd.Attack(DynamicVars["SelfDamage"].BaseValue)
+				.FromCard(this, play).Targeting(base.Owner.Creature).Execute(ctx);
 		}
 		await DamageCmd.Attack(DynamicVars.Damage.BaseValue)
 			.FromCard(this, play).WithHitCount(attackTimes).Targeting(play.Target).Execute(ctx);
