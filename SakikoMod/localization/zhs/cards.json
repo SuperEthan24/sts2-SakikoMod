@@ -61,6 +61,8 @@
 	"SAKIKOMOD-CRUCIFIX_X.title": "十架 X",
 	"SAKIKOMOD-IMPRISONED_XII.description": "获得{Block:diff()}点[gold]格挡[/gold]。\n立刻结束本回合。",
 	"SAKIKOMOD-IMPRISONED_XII.title": "徒囚 XII",
+	"SAKIKOMOD-SOPHIE.description": "消耗{GoldCost:diff()}金币。使对方本回合内失去{SophiePower:diff()}[gold]力量[/gold]。\n使用后回到手中。",
+	"SAKIKOMOD-SOPHIE.title": "苏菲",
 	"SAKIKOMOD-ETIQUETTE.description": "将一张[gold]ですわ[/gold]放入抽牌堆和牌组。",
 	"SAKIKOMOD-ETIQUETTE.title": "礼仪",
 	"SAKIKOMOD-CRYCHIC.description": "回合开始时，丢弃任意张[gold]诅咒[/gold]。\n获得(10-丢弃数)*{CrychicPower:diff()}层[gold]活力[/gold]。",
