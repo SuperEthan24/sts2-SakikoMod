@@ -55,6 +55,8 @@
 	"SAKIKOMOD-IMPROMPTU.title": "即兴",
 	"SAKIKOMOD-KILL_KISS.description": "造成{Damage:diff()}点伤害。\n[gold]斩杀[/gold]时，获得{ExtraTurnPower:diff()}个额外回合。",
 	"SAKIKOMOD-KILL_KISS.title": "杀戮之吻",
+	"SAKIKOMOD-AVE_MUJICA.description": "每回合首次[gold]消耗[/gold]牌时，将{AveMujicaPower:diff()}张[gold]虚无[/gold]复制品置入手牌。",
+	"SAKIKOMOD-AVE_MUJICA.title": "赞颂音乐",
 	"SAKIKOMOD-OVERTURE.description": "将{energyPrefix:energyIcons(1)}补充至{Energy:diff()}{energyPrefix:energyIcons(1)}。\n抽牌直到手牌数为{Cards:diff()}。",
 	"SAKIKOMOD-OVERTURE.title": "开幕",
 	"SAKIKOMOD-PHANTOM_OF_SAKIKO.description": "造成{CalculatedDamage:diff()}点伤害。\n每拥有一张[gold]诅咒[/gold]，额外造成{ExtraDamage:diff()}点伤害。",
