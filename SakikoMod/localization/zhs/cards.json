@@ -37,6 +37,8 @@
 	"SAKIKOMOD-CHOIR_S_CHOIR.title": "堕颂",
 	"SAKIKOMOD-PARREL_PROCESSING.description": "造成{Damage:diff()}点伤害。\n若此时拥有[gold]神明造物[/gold]，获得{Block:diff()}点[gold]格挡[/gold]。",
 	"SAKIKOMOD-PARREL_PROCESSING.title": "并行处理",
+	"SAKIKOMOD-WORLD_VIEW.description": "消耗{GoldCost:diff()}金币。\n对所有敌人施加{WeakPower:diff()}层[gold]虚弱[/gold]与{VulnerablePower:diff()}层[gold]易伤[/gold]。",
+	"SAKIKOMOD-WORLD_VIEW.title": "世界观",
 	"SAKIKOMOD-SHINY.description": "造成{Damage:diff()}点伤害。\n若拥有{Limit:diff()}点能量或更少，获得{Energy:energyIcons()}。",
 	"SAKIKOMOD-SHINY.title": "闪烁",
 	"SAKIKOMOD-EXPERIMENTAL_PROTOTYPE_TRANSPORT.description": "造成{Damage:diff()}点伤害。\n如果拥有不低于{Block:diff()}点[gold]格挡[/gold]，则对自身造成{SelfDamage:diff()}点伤害，额外造成{Repeat:diff()}次伤害。",
