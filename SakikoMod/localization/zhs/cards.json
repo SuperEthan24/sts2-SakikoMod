@@ -35,6 +35,8 @@
 	"SAKIKOMOD-AWAKENING_OF_CRESCENT.title": "新月的苏醒",
 	"SAKIKOMOD-CHOIR_S_CHOIR.description": "消耗{GoldCost:diff()}金币。\n下{BlockRetainPower:diff()}个回合开始时[gold]格挡[/gold]不再消失。",
 	"SAKIKOMOD-CHOIR_S_CHOIR.title": "堕颂",
+	"SAKIKOMOD-STAGE_SETTING.description": "本回合获得{StageSettingPower:diff()}点[gold]力量[/gold]。",
+	"SAKIKOMOD-STAGE_SETTING.title": "舞台装置",
 	"SAKIKOMOD-PARREL_PROCESSING.description": "造成{Damage:diff()}点伤害。\n若此时拥有[gold]神明造物[/gold]，获得{Block:diff()}点[gold]格挡[/gold]。",
 	"SAKIKOMOD-PARREL_PROCESSING.title": "并行处理",
 	"SAKIKOMOD-WORLD_VIEW.description": "消耗{GoldCost:diff()}金币。\n对所有敌人施加{WeakPower:diff()}层[gold]虚弱[/gold]与{VulnerablePower:diff()}层[gold]易伤[/gold]。",

@@ -44,5 +44,8 @@
 	"SAKIKOMOD-SOPHIE_POWER.title": "苏菲",
 	"SAKIKOMOD-AVE_MUJICA_POWER.description": "每回合首次[gold]消耗[/gold]牌时，将一张[gold]虚无[/gold]复制品置入手牌。",
 	"SAKIKOMOD-AVE_MUJICA_POWER.smartDescription": "每回合首次[gold]消耗[/gold]牌时，将{Amount}张[gold]虚无[/gold]复制品置入手牌。",
-	"SAKIKOMOD-AVE_MUJICA_POWER.title": "赞颂音乐"
+	"SAKIKOMOD-AVE_MUJICA_POWER.title": "赞颂音乐",
+	"SAKIKOMOD-STAGE_SETTING_POWER.description": "本回合内获得[gold]力量[/gold]。",
+	"SAKIKOMOD-STAGE_SETTING_POWER.smartDescription": "本回合内获得{Amount}点[gold]力量[/gold]。",
+	"SAKIKOMOD-STAGE_SETTING_POWER.title": "舞台装置"
 }
