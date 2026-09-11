@@ -69,6 +69,8 @@
 	"SAKIKOMOD-PHANTOM_OF_SAKIKO.title": "“祥子”的幻影",
 	"SAKIKOMOD-CRUCIFIX_X.description": "对随机敌人造成{Damage:diff()}伤害X次。\n如果X为{Energy:diff()}或更多，将X翻倍。\n(造成{XAttack}次伤害)",
 	"SAKIKOMOD-CRUCIFIX_X.title": "十架 X",
+	"SAKIKOMOD-S_THE_WAY.description": "造成{CalculatedDamage:diff()}点伤害。\n消耗自身的全部[gold]余音[/gold]，额外造成消耗的总层数的伤害。",
+	"SAKIKOMOD-S_THE_WAY.title": "斩切之道",
 	"SAKIKOMOD-IMPRISONED_XII.description": "获得{Block:diff()}点[gold]格挡[/gold]。\n立刻结束本回合。",
 	"SAKIKOMOD-IMPRISONED_XII.title": "徒囚 XII",
 	"SAKIKOMOD-SOPHIE.description": "消耗{GoldCost:diff()}金币。使对方本回合内失去{SophiePower:diff()}[gold]力量[/gold]。\n使用后回到手中。",

@@ -32,7 +32,7 @@ public class Impromptu : SakikoCharacterBaseCard
 	protected override async Task OnPlay(PlayerChoiceContext ctx, CardPlay _)
 	{
 		await PlayerCmd.GainEnergy(DynamicVars.Energy.BaseValue, base.Owner);
-		await CardPileCmd.Draw(ctx, base.Owner);
+		await CardPileCmd.Draw(ctx, DynamicVars.Cards.BaseValue, base.Owner);
 	}
 
 	public override async Task BeforeHandDraw(Player player, PlayerChoiceContext ctx, ICombatState combatState)
