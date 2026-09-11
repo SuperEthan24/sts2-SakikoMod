@@ -47,5 +47,8 @@
 	"SAKIKOMOD-AVE_MUJICA_POWER.title": "赞颂音乐",
 	"SAKIKOMOD-STAGE_SETTING_POWER.description": "本回合内获得[gold]力量[/gold]。",
 	"SAKIKOMOD-STAGE_SETTING_POWER.smartDescription": "本回合内获得{Amount}点[gold]力量[/gold]。",
-	"SAKIKOMOD-STAGE_SETTING_POWER.title": "舞台装置"
+	"SAKIKOMOD-STAGE_SETTING_POWER.title": "舞台装置",
+	"SAKIKOMOD-LINGERING_POWER.description": "下回合开始时，对敌人造成伤害。",
+	"SAKIKOMOD-LINGERING_POWER.smartDescription": "下回合开始时，对敌人造成{Amount}点伤害。",
+	"SAKIKOMOD-LINGERING_POWER.title": "余音"
 }

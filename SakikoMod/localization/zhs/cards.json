@@ -73,6 +73,8 @@
 	"SAKIKOMOD-SOPHIE.title": "苏菲",
 	"SAKIKOMOD-ETIQUETTE.description": "将一张[gold]ですわ[/gold]放入抽牌堆和牌组。",
 	"SAKIKOMOD-ETIQUETTE.title": "礼仪",
+	"SAKIKOMOD-LINGERING_SOUND.description": "对目标造成{Damage:diff()}点伤害。\n下回合开始时对目标造成{Damage:diff()}点伤害。",
+	"SAKIKOMOD-LINGERING_SOUND.title": "余音绕梁",
 	"SAKIKOMOD-CRYCHIC.description": "回合开始时，丢弃任意张[gold]诅咒[/gold]。\n获得(10-丢弃数)*{CrychicPower:diff()}层[gold]活力[/gold]。",
 	"SAKIKOMOD-CRYCHIC.title": "Crychic",
 	"SAKIKOMOD-PERPETUAL_CYCLE.description": "若上回合未受到超过10点的体力伤害，则本回合结束时格挡不再消失。",
