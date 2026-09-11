@@ -50,5 +50,8 @@
 	"SAKIKOMOD-STAGE_SETTING_POWER.title": "舞台装置",
 	"SAKIKOMOD-LINGERING_POWER.description": "下回合开始时，对敌人造成伤害。",
 	"SAKIKOMOD-LINGERING_POWER.smartDescription": "下回合开始时，对敌人造成{Amount}点伤害。",
-	"SAKIKOMOD-LINGERING_POWER.title": "余音"
+	"SAKIKOMOD-LINGERING_POWER.title": "余音",
+	"SAKIKOMOD-SYMBOL_II_AIR_POWER.description": "无法使用[gold]攻击[/gold]牌。",
+	"SAKIKOMOD-SYMBOL_II_AIR_POWER.smartDescription": "{Amount}个回合内，无法使用[gold]攻击[/gold]牌。",
+	"SAKIKOMOD-SYMBOL_II_AIR_POWER.title": "第二元素：气"
 }
